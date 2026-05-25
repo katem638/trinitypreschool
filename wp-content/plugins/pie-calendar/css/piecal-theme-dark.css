@@ -1,0 +1,63 @@
+.piecal-wrapper.piecal-theme-dark {
+    --fc-border-color: #303643;
+    --fc-event-bg-color: #0d1117;
+    --fc-event-text-color: #8b949e;
+    --fc-today-bg-color: #0d1117;
+    --fc-event-border-color: #303643; 
+    --fc-neutral-bg-color: #0d1117;
+    --fc-list-event-hover-bg-color: #0d1117;
+
+    color: white;
+}
+
+.piecal-wrapper.piecal-theme-dark a {
+    color: #58a6ff;
+}
+
+.piecal-wrapper.piecal-theme-dark .fc-event {
+    border-color: #303643;
+}
+
+.piecal-wrapper.piecal-theme-dark .fc-day-today > div {
+    border: 1px dashed white;
+}
+
+.piecal-wrapper.piecal-theme-dark .fc .fc-toolbar-title {
+    color: white;
+}
+
+.piecal-wrapper.piecal-theme-dark .fc a {
+    color: white;
+}
+
+.piecal-wrapper.piecal-theme-dark .fc .fc-button-primary {
+    background-color: white;
+    color: black;
+}
+
+.piecal-wrapper.piecal-theme-dark .piecal-popover__inner {
+    background: var(--fc-event-bg-color);
+}
+
+.piecal-wrapper.piecal-theme-dark .piecal-popover__inner hr {
+    background: var(--fc-event-border-color);
+}
+
+.piecal-wrapper.piecal-theme-dark .piecal-popover__close-button {
+    background: none;
+}
+
+.piecal-wrapper.piecal-theme-dark .piecal-popover__close-button::before,
+.piecal-wrapper.piecal-theme-dark .piecal-popover__close-button::after {
+    background: white;
+}
+
+.piecal-wrapper.piecal-theme-dark--widget .fc-daygrid-day-frame:has(.fc-daygrid-event-harness)::after {
+    box-shadow: 0px 0px 0px 1px white;
+}
+
+@media only screen and (max-width: 768px) {
+    .piecal-wrapper--responsive-widget[data-view="dayGridMonth"].piecal-theme-dark .fc-daygrid-day-frame:has(.fc-daygrid-event-harness)::after {
+        box-shadow: 0px 0px 0px 1px white;
+    }
+}

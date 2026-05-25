@@ -1,0 +1,33 @@
+{
+  "name": "piecalendar",
+  "version": "1.0.0",
+  "description": "Pie Calendar",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spellhammer/piecalendar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spellhammer/piecalendar/issues"
+  },
+  "homepage": "https://github.com/Spellhammer/piecalendar#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "25.1.0"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/icalendar": "^6.1.19",
+    "@fullcalendar/list": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
+    "@fullcalendar/timegrid": "^6.1.11",
+    "@wordpress/i18n": "^5.22.0"
+  }
+}

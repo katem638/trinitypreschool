@@ -1,0 +1,35 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"tp-main","layout":{"type":"default"}} -->
+<main class="wp-block-group tp-main">
+	<!-- wp:group {"align":"full","className":"tp-event-single-page","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull tp-event-single-page">
+		<!-- wp:group {"align":"wide","className":"tp-event-single-card","layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide tp-event-single-card">
+			<!-- wp:post-featured-image {"className":"tp-event-featured-image"} /-->
+
+			<!-- wp:group {"className":"tp-event-single-copy","layout":{"type":"default"}} -->
+			<div class="wp-block-group tp-event-single-copy">
+				<!-- wp:post-title {"level":1} /-->
+
+				<!-- wp:piecal/event-info {"fragments":["start","end"]} /-->
+
+				<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+
+				<!-- wp:buttons -->
+				<div class="wp-block-buttons">
+					<!-- wp:button -->
+					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/events/">All Events</a></div>
+					<!-- /wp:button -->
+				</div>
+				<!-- /wp:buttons -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

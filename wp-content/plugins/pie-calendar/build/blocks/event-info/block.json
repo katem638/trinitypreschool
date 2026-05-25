@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "piecal/event-info",
+  "version": "0.1.0",
+  "title": "Pie Calendar Event Info",
+  "category": "widgets",
+  "icon": "calendar-alt",
+  "description": "Pie Calendar information block for use on posts designated as events. This block will display the event-specific information.",
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "padding": true,
+      "margin": true
+    },
+    "color": {
+      "background": true,
+      "text": true
+    }
+  },
+  "attributes": {
+    "format": {
+      "type": "string",
+      "default": ""
+    },
+    "hidetimezone": {
+      "type": "boolean",
+      "default": false
+    },
+    "fragments": {
+      "type": "array",
+      "default": ""
+    },
+    "hidePrependText": {
+      "type": "boolean",
+      "default": false
+    },
+    "startText": {
+      "type": "string",
+      "default": ""
+    },
+    "endText": {
+      "type": "string",
+      "default": ""
+    },
+    "allDayText": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "piecal",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

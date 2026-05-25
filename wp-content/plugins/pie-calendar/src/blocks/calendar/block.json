@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "piecal/calendar",
+  "version": "0.1.0",
+  "title": "Pie Calendar",
+  "category": "widgets",
+  "icon": "calendar-alt",
+  "description": "Show a calendar of Pie Calendar events.",
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": {
+      "padding": true,
+      "margin": true
+    },
+    "color": {
+      "background": true,
+      "text": true
+    }
+  },
+  "attributes": {
+    "view": {
+      "type": "string",
+      "default": ""
+    },
+    "type": {
+      "type": "array",
+      "default": []
+    },
+    "theme": {
+      "type": "string",
+      "default": ""
+    },
+    "locale": {
+      "type": "string",
+      "default": ""
+    },
+    "widget": {
+      "type": "string",
+      "default": ""
+    },
+    "wraptitles": {
+      "type": "boolean",
+      "default": false
+    },
+    "hidetimezone": {
+      "type": "boolean",
+      "default": false
+    },
+    "automaticenddates": {
+      "type": "boolean",
+      "default": false
+    },
+    "featuredimage": {
+      "type": "boolean",
+      "default": false
+    },
+    "duration": {
+      "type": "number",
+      "default": 1
+    },
+    "hidepastevents": {
+      "type": "boolean",
+      "default": false
+    },
+    "sources": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "piecal",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
