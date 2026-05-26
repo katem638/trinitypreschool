@@ -10,6 +10,29 @@ if ( ! function_exists( 'trinity_preschool_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'trinity_preschool_setup' );
 
+if ( ! function_exists( 'trinity_preschool_register_block_patterns' ) ) {
+	function trinity_preschool_register_block_patterns() {
+		$extended_day_pattern = get_theme_file_path( '/patterns/extended-day-program.php' );
+
+		if ( file_exists( $extended_day_pattern ) ) {
+			ob_start();
+			include $extended_day_pattern;
+			$extended_day_content = ob_get_clean();
+
+			register_block_pattern(
+				'trinity-preschool/extended-day-program',
+				array(
+					'title'      => __( 'Extended Day Program', 'trinity-preschool' ),
+					'categories' => array( 'trinity-preschool' ),
+					'inserter'   => false,
+					'content'    => $extended_day_content,
+				)
+			);
+		}
+	}
+}
+add_action( 'init', 'trinity_preschool_register_block_patterns' );
+
 if ( ! function_exists( 'trinity_preschool_register_event_post_type' ) ) {
 	function trinity_preschool_register_event_post_type() {
 		$labels = array(
@@ -138,6 +161,59 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 	});
+});
+JS
+			);
+		}
+
+		if ( is_page( 'tuition-plans-pricing' ) ) {
+			wp_register_script(
+				'trinity-preschool-tuition',
+				false,
+				array(),
+				file_exists( $stylesheet_path ) ? filemtime( $stylesheet_path ) : wp_get_theme()->get( 'Version' ),
+				true
+			);
+			wp_enqueue_script( 'trinity-preschool-tuition' );
+			wp_add_inline_script(
+				'trinity-preschool-tuition',
+				<<<'JS'
+document.addEventListener('DOMContentLoaded', function () {
+	var page = document.querySelector('.tp-tuition-page');
+
+	if (!page) {
+		return;
+	}
+
+	var buttons = page.querySelectorAll('[data-tuition-period]');
+	var rates = page.querySelectorAll('.tp-tuition-rate');
+
+	var setPeriod = function (period) {
+		buttons.forEach(function (button) {
+			var isActive = button.dataset.tuitionPeriod === period;
+			button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+		});
+
+		rates.forEach(function (rate) {
+			var amount = rate.querySelector('.tp-rate-amount');
+			var label = rate.querySelector('.tp-rate-period');
+
+			if (!amount || !label || !rate.dataset[period]) {
+				return;
+			}
+
+			amount.textContent = rate.dataset[period];
+			label.textContent = 'per ' + (period === 'monthly' ? 'month' : 'year');
+		});
+	};
+
+	buttons.forEach(function (button) {
+		button.addEventListener('click', function () {
+			setPeriod(button.dataset.tuitionPeriod);
+		});
+	});
+
+	setPeriod('yearly');
 });
 JS
 			);
