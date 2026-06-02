@@ -11,7 +11,7 @@
 <div class="tp-extended-page alignfull">
 	<section class="tp-extended-hero" aria-labelledby="tp-extended-title">
 		<nav class="tp-extended-breadcrumb" aria-label="Breadcrumb">
-			<a href="/school-programs/">School Programs</a>
+			<span>School Programs</span>
 			<span aria-hidden="true">/</span>
 			<span>Extended Day</span>
 		</nav>

@@ -134,6 +134,18 @@ function tp_upsert_page( $title, $slug, $content, $parent_id = 0 ) {
 	return (int) wp_insert_post( $args );
 }
 
+function tp_get_theme_pattern_content( $relative_path ) {
+	$path = get_stylesheet_directory() . '/' . ltrim( $relative_path, '/' );
+
+	if ( ! file_exists( $path ) ) {
+		WP_CLI::error( sprintf( 'Missing theme pattern at "%s".', $path ) );
+	}
+
+	ob_start();
+	include $path;
+	return trim( ob_get_clean() );
+}
+
 update_option( 'blogname', 'Trinity Episcopal Preschool' );
 update_option( 'blogdescription', 'Joyful learning every day in Moorestown, NJ.' );
 
@@ -369,50 +381,7 @@ $home_content = <<<HTML
 <!-- /wp:group -->
 HTML;
 
-$programs = array(
-	array( 'image' => 'extended1', 'title' => 'Music Class', 'text' => 'This 30-minute program is taught by Nanci Wright. Each week, the children concentrate on basic music fundamentals such as tempo, beat, rhythm, pitch, dynamics, orchestral instruments while featuring a variety of themes that will enable children to utilize their imaginations and creativity.' ),
-	array( 'image' => 'extended2', 'title' => 'Exercise with Coach Pat', 'text' => 'This 45-minute class is held every other Friday and taught by Coach Pat. He teaches children to have fun with exercise through games, music and stories. The program is designed to promote exercise and wellness for young children.' ),
-	array( 'image' => 'extended3', 'title' => 'Action Karate Class', 'text' => 'This 30-minute class is taught by an instructor from Action Karate. It will teach your child various skills such as focus, respect, confidence, self-discipline, courtesy, safety and the benefits of healthy eating and exercise.' ),
-	array( 'image' => 'extended4', 'title' => 'Little Bakers', 'text' => 'This program is for 4- and 5-year old children and is held on Mondays from after school to 1:30pm. The children will bake through the alphabet while learning to cook with healthy ingredients. They will also learn to make healthier food choices, learn kitchen and food safety, as well as measuring and using kitchen utensils.' ),
-	array( 'image' => 'extended5', 'title' => 'Building Club', 'text' => 'This class is for 4- and 5-year old children and is held on Tuesday or Wednesday from after school to 1:30pm. The children will be working in small groups and building with Lego pieces. Each week there will be different objectives along with different structures to make. We will also allow time for the children to create their own structures.' ),
-	array( 'image' => 'extended6', 'title' => 'Art and Science', 'text' => 'This class is for 4- and 5-year old children and is held every other Friday from after school to 1:30. The children will engage in different science activities with an art activity to go along with the topic.' ),
-);
-
-$program_cards = '';
-foreach ( $programs as $program ) {
-	$program_cards .= '<!-- wp:group {"className":"tp-program-card","layout":{"type":"default"}} -->' . "\n";
-	$program_cards .= '<div class="wp-block-group tp-program-card">' . "\n";
-	$program_cards .= tp_image_block( $media[ $program['image'] ] ) . "\n";
-	$program_cards .= sprintf(
-		'<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">%s</h2><!-- /wp:heading -->' . "\n" .
-		'<!-- wp:paragraph --><p>%s</p><!-- /wp:paragraph -->',
-		esc_html( $program['title'] ),
-		esc_html( $program['text'] )
-	);
-	$program_cards .= "\n</div>\n<!-- /wp:group -->\n";
-}
-
-$extended_content = <<<HTML
-<!-- wp:group {"align":"full","className":"tp-programs-page","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull tp-programs-page">
-	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
-	<div class="wp-block-group alignwide">
-		<!-- wp:heading {"level":1} -->
-		<h1 class="wp-block-heading">Extended Day Classes</h1>
-		<!-- /wp:heading -->
-		<!-- wp:paragraph {"className":"tp-program-intro"} -->
-		<p class="tp-program-intro">Explore our extended-day classes which provide enriching activities and a safe environment for your child to learn and grow.</p>
-		<!-- /wp:paragraph -->
-		<!-- wp:group {"className":"tp-program-grid","layout":{"type":"default"}} -->
-		<div class="wp-block-group tp-program-grid">
-			{$program_cards}
-		</div>
-		<!-- /wp:group -->
-	</div>
-	<!-- /wp:group -->
-</div>
-<!-- /wp:group -->
-HTML;
+$extended_content = tp_get_theme_pattern_content( 'patterns/extended-day-program.php' );
 
 $schedule_content = <<<HTML
 <!-- wp:group {"align":"full","className":"tp-standard-page","layout":{"type":"constrained"}} -->
