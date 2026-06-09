@@ -3368,6 +3368,13 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	box-sizing: border-box;
 }
 
+.tp-tuition-page .wp-block-group,
+.tp-tuition-page .wp-block-heading,
+.tp-tuition-page p {
+	margin-block-end: 0;
+	margin-block-start: 0;
+}
+
 .tp-tuition-hero,
 .tp-classrooms,
 .tp-tuition-notes,
@@ -3626,7 +3633,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	padding: 16px;
 }
 
-.tp-tuition-fee strong {
+.tp-tuition-fee .tp-fee-badge {
 	align-items: center;
 	background: var(--tp-navy);
 	border-radius: 12px;
@@ -3722,7 +3729,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	width: 168px;
 }
 
-.tp-class-card header p {
+.tp-class-card header > p:first-of-type {
 	background: rgba(255, 255, 255, 0.22);
 	border-radius: 999px;
 	color: inherit;
@@ -3807,7 +3814,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	padding: 12px 14px;
 }
 
-.tp-class-schedule span {
+.tp-class-schedule .tp-schedule-label {
 	background: #fff2c9;
 	border-radius: 8px;
 	color: #7f704a;
@@ -3819,20 +3826,20 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	white-space: nowrap;
 }
 
-.tp-class-schedule strong,
-.tp-class-schedule small,
-.tp-class-schedule b {
+.tp-class-schedule .tp-schedule-title,
+.tp-class-schedule .tp-schedule-note,
+.tp-class-schedule .tp-schedule-time {
 	display: block;
 }
 
-.tp-class-schedule strong {
+.tp-class-schedule .tp-schedule-title {
 	color: var(--tp-navy);
 	font-size: 0.78rem;
 	font-weight: 900;
 	line-height: 1.2;
 }
 
-.tp-class-schedule small {
+.tp-class-schedule .tp-schedule-note {
 	color: #737b8d;
 	font-size: 0.66rem;
 	font-weight: 800;
@@ -3840,7 +3847,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	margin-top: 3px;
 }
 
-.tp-class-schedule b {
+.tp-class-schedule .tp-schedule-time {
 	color: var(--tp-navy);
 	font-family: var(--tp-display-font);
 	font-size: 1.08rem;
@@ -3898,7 +3905,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	position: relative;
 }
 
-.tp-note > strong {
+.tp-note > .tp-note-badge {
 	align-items: center;
 	background: var(--tp-gold);
 	border-radius: 12px;
@@ -3913,6 +3920,10 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	top: -19px;
 	transform: rotate(8deg);
 	width: 68px;
+}
+
+.tp-note > .tp-note-badge::before {
+	content: none;
 }
 
 .tp-note p {
@@ -3945,7 +3956,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	margin: 0 0 12px;
 }
 
-.tp-note span {
+.tp-note .tp-note-copy {
 	color: #586277;
 	display: block;
 	font-size: 0.84rem;
@@ -3966,7 +3977,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 
 .tp-note-navy p,
 .tp-note-navy h2,
-.tp-note-navy span {
+.tp-note-navy .tp-note-copy {
 	color: #fff;
 }
 
@@ -4051,22 +4062,22 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	text-decoration: none;
 }
 
-.tp-tuition-actions a:first-child {
+.tp-tuition-actions .wp-block-button:first-child a {
 	background: var(--tp-navy);
 	color: var(--tp-gold);
 }
 
-.tp-tuition-actions a:first-child::after {
+.tp-tuition-actions .wp-block-button:first-child a::after {
 	content: "\2192";
 	margin-left: 8px;
 }
 
-.tp-tuition-actions a:last-child {
+.tp-tuition-actions .wp-block-button:last-child a {
 	background: rgba(255, 255, 255, 0.22);
 	color: #fff;
 }
 
-.tp-tuition-cta dl {
+.tp-tuition-contact-list {
 	background: rgba(255, 255, 255, 0.16);
 	border: 1px solid rgba(255, 255, 255, 0.28);
 	border-radius: 24px;
@@ -4074,7 +4085,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	padding: 24px 28px;
 }
 
-.tp-tuition-cta dl div {
+.tp-tuition-contact-row {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 	display: grid;
 	gap: 16px;
@@ -4082,17 +4093,17 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	padding: 12px 0;
 }
 
-.tp-tuition-cta dl div:first-child {
+.tp-tuition-contact-row:first-child {
 	padding-top: 0;
 }
 
-.tp-tuition-cta dl div:last-child {
+.tp-tuition-contact-row:last-child {
 	border-bottom: 0;
 	padding-bottom: 0;
 }
 
-.tp-tuition-cta dt,
-.tp-tuition-cta dd,
+.tp-contact-label,
+.tp-contact-value,
 .tp-tuition-cta a {
 	color: #fff;
 	font-size: 0.82rem;
@@ -4102,7 +4113,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	text-decoration: none;
 }
 
-.tp-tuition-cta dd {
+.tp-contact-value {
 	color: #ffe17b;
 	text-align: right;
 }
@@ -4839,13 +4850,13 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 
 	.tp-tuition-rate,
 	.tp-class-schedule,
-	.tp-tuition-cta dl div {
+	.tp-tuition-contact-row {
 		grid-template-columns: 1fr;
 	}
 
 	.tp-tuition-rate strong,
-	.tp-class-schedule b,
-	.tp-tuition-cta dd {
+	.tp-class-schedule .tp-schedule-time,
+	.tp-contact-value {
 		text-align: left;
 	}
 
