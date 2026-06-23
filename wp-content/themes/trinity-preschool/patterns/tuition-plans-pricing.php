@@ -8,156 +8,16 @@
 ?>
 <!-- wp:group {"align":"full","className":"tp-tuition-page","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull tp-tuition-page">
-	<!-- wp:group {"tagName":"section","className":"tp-tuition-hero","layout":{"type":"default"}} -->
-	<section class="wp-block-group tp-tuition-hero">
-		<!-- wp:group {"className":"tp-tuition-hero-copy","layout":{"type":"default"}} -->
-		<div class="wp-block-group tp-tuition-hero-copy">
-			<!-- wp:paragraph {"className":"tp-tuition-eyebrow"} -->
-			<p class="tp-tuition-eyebrow">Programs &amp; Tuition 2026-27</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:heading {"level":1} -->
-			<h1 class="wp-block-heading">Pick a <span>class.</span> <mark>See the price.</mark></h1>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph {"className":"tp-tuition-intro"} -->
-			<p class="tp-tuition-intro">Four age groups. Schedules that fit your week. <strong>Tuition shown right alongside the classroom</strong> so you can compare in seconds.</p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"tagName":"aside","className":"tp-tuition-glance","layout":{"type":"default"}} -->
-		<aside class="wp-block-group tp-tuition-glance">
-			<!-- wp:group {"className":"tp-tuition-glance-head","layout":{"type":"default"}} -->
-			<div class="wp-block-group tp-tuition-glance-head">
-				<!-- wp:group {"layout":{"type":"default"}} -->
-				<div class="wp-block-group">
-					<!-- wp:heading -->
-					<h2 class="wp-block-heading">Tuition at a glance.</h2>
-					<!-- /wp:heading -->
-
-					<!-- wp:paragraph -->
-					<p>All programs run September through June. Monthly tuition only.</p>
-					<!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:group -->
-
-			<!-- wp:group {"className":"tp-tuition-rate-list","layout":{"type":"default"}} -->
-			<div class="wp-block-group tp-tuition-rate-list">
-				<!-- wp:group {"className":"tp-tuition-rate tp-rate-coral","layout":{"type":"default"}} -->
-				<div class="wp-block-group tp-tuition-rate tp-rate-coral">
-					<!-- wp:group {"layout":{"type":"default"}} -->
-					<div class="wp-block-group">
-						<!-- wp:heading {"level":3} -->
-						<h3 class="wp-block-heading">2.5-Year-Olds - 2 days</h3>
-						<!-- /wp:heading -->
-
-						<!-- wp:paragraph -->
-						<p>Age 2 1/2 by Sept 1 - Tue/Thu</p>
-						<!-- /wp:paragraph -->
-					</div>
-					<!-- /wp:group -->
-
-					<!-- wp:paragraph {"className":"tp-rate-price"} -->
-					<p class="tp-rate-price"><strong><span class="tp-rate-amount">$220</span> <span class="tp-rate-period">per month</span></strong></p>
-					<!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-
-				<!-- wp:group {"className":"tp-tuition-rate tp-rate-blue","layout":{"type":"default"}} -->
-				<div class="wp-block-group tp-tuition-rate tp-rate-blue">
-					<!-- wp:group {"layout":{"type":"default"}} -->
-					<div class="wp-block-group">
-						<!-- wp:heading {"level":3} -->
-						<h3 class="wp-block-heading">3-Year-Olds - 3 days</h3>
-						<!-- /wp:heading -->
-
-						<!-- wp:paragraph -->
-						<p>Age 3 by Sept 30 - M/W/F</p>
-						<!-- /wp:paragraph -->
-					</div>
-					<!-- /wp:group -->
-
-					<!-- wp:paragraph {"className":"tp-rate-price"} -->
-					<p class="tp-rate-price"><strong><span class="tp-rate-amount">$390</span> <span class="tp-rate-period">per month</span></strong></p>
-					<!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-
-				<!-- wp:group {"className":"tp-tuition-rate tp-rate-gold","layout":{"type":"default"}} -->
-				<div class="wp-block-group tp-tuition-rate tp-rate-gold">
-					<!-- wp:group {"layout":{"type":"default"}} -->
-					<div class="wp-block-group">
-						<!-- wp:heading {"level":3} -->
-						<h3 class="wp-block-heading">3s, 4s &amp; TK - 4 days</h3>
-						<!-- /wp:heading -->
-
-						<!-- wp:paragraph -->
-						<p>Four mornings a week</p>
-						<!-- /wp:paragraph -->
-					</div>
-					<!-- /wp:group -->
-
-					<!-- wp:paragraph {"className":"tp-rate-price"} -->
-					<p class="tp-rate-price"><strong><span class="tp-rate-amount">$475</span> <span class="tp-rate-period">per month</span></strong></p>
-					<!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-
-				<!-- wp:group {"className":"tp-tuition-rate tp-rate-navy","layout":{"type":"default"}} -->
-				<div class="wp-block-group tp-tuition-rate tp-rate-navy">
-					<!-- wp:group {"layout":{"type":"default"}} -->
-					<div class="wp-block-group">
-						<!-- wp:heading {"level":3} -->
-						<h3 class="wp-block-heading">3s, 4s &amp; TK - 5 days</h3>
-						<!-- /wp:heading -->
-
-						<!-- wp:paragraph -->
-						<p>Monday through Friday</p>
-						<!-- /wp:paragraph -->
-					</div>
-					<!-- /wp:group -->
-
-					<!-- wp:paragraph {"className":"tp-rate-price"} -->
-					<p class="tp-rate-price"><strong><span class="tp-rate-amount">$530</span> <span class="tp-rate-period">per month</span></strong></p>
-					<!-- /wp:paragraph -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:group -->
-
-			<!-- wp:group {"className":"tp-tuition-fee","layout":{"type":"default"}} -->
-			<div class="wp-block-group tp-tuition-fee">
-				<!-- wp:paragraph {"className":"tp-fee-badge"} -->
-				<p class="tp-fee-badge">$50</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:paragraph -->
-				<p><b>One-time registration fee.</b><span>Non-refundable, per student, due at enrollment.</span></p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-		</aside>
-		<!-- /wp:group -->
-	</section>
-	<!-- /wp:group -->
-
 	<!-- wp:group {"tagName":"section","className":"tp-classrooms","layout":{"type":"default"}} -->
 	<section class="wp-block-group tp-classrooms">
 		<!-- wp:group {"className":"tp-classrooms-head","layout":{"type":"default"}} -->
 		<div class="wp-block-group tp-classrooms-head">
-			<!-- wp:paragraph {"className":"tp-tuition-eyebrow"} -->
-			<p class="tp-tuition-eyebrow">The four classrooms</p>
-			<!-- /wp:paragraph -->
-
 			<!-- wp:heading -->
 			<h2 class="wp-block-heading">Built for every <span>step</span> <mark>forward.</mark></h2>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph -->
-			<p>Each room is staffed by a lead teacher plus an assistant. We keep groups small so kids get the attention, and parents get the updates, they deserve.</p>
+			<!-- wp:paragraph {"className":"tp-classrooms-intro"} -->
+			<p class="tp-classrooms-intro">Each room is staffed by a lead teacher plus an assistant, with small groups so children get the attention they need and parents get the updates they deserve.</p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -209,22 +69,15 @@
 						<!-- wp:paragraph {"className":"tp-schedule-time"} -->
 						<p class="tp-schedule-time">9:10 - 11:10 am</p>
 						<!-- /wp:paragraph -->
+
+						<!-- wp:paragraph {"className":"tp-schedule-price"} -->
+						<p class="tp-schedule-price">$220/mo</p>
+						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
 				</div>
 				<!-- /wp:group -->
 
-				<!-- wp:group {"tagName":"footer","layout":{"type":"default"}} -->
-				<footer class="wp-block-group">
-					<!-- wp:paragraph -->
-					<p><span>$220</span> / month</p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:paragraph -->
-					<p>2-day option only <strong>2-day program</strong></p>
-					<!-- /wp:paragraph -->
-				</footer>
-				<!-- /wp:group -->
 			</article>
 			<!-- /wp:group -->
 
@@ -273,6 +126,10 @@
 						<!-- wp:paragraph {"className":"tp-schedule-time"} -->
 						<p class="tp-schedule-time">9:20 - 11:50</p>
 						<!-- /wp:paragraph -->
+
+						<!-- wp:paragraph {"className":"tp-schedule-price"} -->
+						<p class="tp-schedule-price">$390/mo</p>
+						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
 
@@ -296,6 +153,10 @@
 
 						<!-- wp:paragraph {"className":"tp-schedule-time"} -->
 						<p class="tp-schedule-time">9:00 - 11:30</p>
+						<!-- /wp:paragraph -->
+
+						<!-- wp:paragraph {"className":"tp-schedule-price"} -->
+						<p class="tp-schedule-price">$475/mo</p>
 						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
@@ -321,22 +182,15 @@
 						<!-- wp:paragraph {"className":"tp-schedule-time"} -->
 						<p class="tp-schedule-time">9:00 - 11:30</p>
 						<!-- /wp:paragraph -->
+
+						<!-- wp:paragraph {"className":"tp-schedule-price"} -->
+						<p class="tp-schedule-price">$530/mo</p>
+						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
 				</div>
 				<!-- /wp:group -->
 
-				<!-- wp:group {"tagName":"footer","layout":{"type":"default"}} -->
-				<footer class="wp-block-group">
-					<!-- wp:paragraph -->
-					<p>From <span>$390</span> / month - 3-day</p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:paragraph -->
-					<p>Up to $530 / month <strong>5-day option</strong></p>
-					<!-- /wp:paragraph -->
-				</footer>
-				<!-- /wp:group -->
 			</article>
 			<!-- /wp:group -->
 
@@ -385,6 +239,10 @@
 						<!-- wp:paragraph {"className":"tp-schedule-time"} -->
 						<p class="tp-schedule-time">9:10 - 11:40</p>
 						<!-- /wp:paragraph -->
+
+						<!-- wp:paragraph {"className":"tp-schedule-price"} -->
+						<p class="tp-schedule-price">$390/mo</p>
+						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
 
@@ -408,6 +266,10 @@
 
 						<!-- wp:paragraph {"className":"tp-schedule-time"} -->
 						<p class="tp-schedule-time">9:00 - 11:30</p>
+						<!-- /wp:paragraph -->
+
+						<!-- wp:paragraph {"className":"tp-schedule-price"} -->
+						<p class="tp-schedule-price">$475/mo</p>
 						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
@@ -433,22 +295,15 @@
 						<!-- wp:paragraph {"className":"tp-schedule-time"} -->
 						<p class="tp-schedule-time">9:00 - 11:30</p>
 						<!-- /wp:paragraph -->
+
+						<!-- wp:paragraph {"className":"tp-schedule-price"} -->
+						<p class="tp-schedule-price">$530/mo</p>
+						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
 				</div>
 				<!-- /wp:group -->
 
-				<!-- wp:group {"tagName":"footer","layout":{"type":"default"}} -->
-				<footer class="wp-block-group">
-					<!-- wp:paragraph -->
-					<p>From <span>$390</span> / month - 3-day</p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:paragraph -->
-					<p>Up to $530 / month <strong>5-day option</strong></p>
-					<!-- /wp:paragraph -->
-				</footer>
-				<!-- /wp:group -->
 			</article>
 			<!-- /wp:group -->
 
@@ -497,6 +352,10 @@
 						<!-- wp:paragraph {"className":"tp-schedule-time"} -->
 						<p class="tp-schedule-time">8:50 - 11:50</p>
 						<!-- /wp:paragraph -->
+
+						<!-- wp:paragraph {"className":"tp-schedule-price"} -->
+						<p class="tp-schedule-price">$475/mo</p>
+						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
 
@@ -521,22 +380,15 @@
 						<!-- wp:paragraph {"className":"tp-schedule-time"} -->
 						<p class="tp-schedule-time">8:50 - 11:50</p>
 						<!-- /wp:paragraph -->
+
+						<!-- wp:paragraph {"className":"tp-schedule-price"} -->
+						<p class="tp-schedule-price">$530/mo</p>
+						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
 				</div>
 				<!-- /wp:group -->
 
-				<!-- wp:group {"tagName":"footer","layout":{"type":"default"}} -->
-				<footer class="wp-block-group">
-					<!-- wp:paragraph -->
-					<p>From <span>$475</span> / month - 4-day</p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:paragraph -->
-					<p>$530 / month <strong>5-day option</strong></p>
-					<!-- /wp:paragraph -->
-				</footer>
-				<!-- /wp:group -->
 			</article>
 			<!-- /wp:group -->
 		</div>
