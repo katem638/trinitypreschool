@@ -12,20 +12,42 @@ add_action( 'after_setup_theme', 'trinity_preschool_setup' );
 
 if ( ! function_exists( 'trinity_preschool_register_block_patterns' ) ) {
 	function trinity_preschool_register_block_patterns() {
-		$extended_day_pattern = get_theme_file_path( '/patterns/extended-day-program.php' );
+		if ( function_exists( 'register_block_pattern_category' ) ) {
+			register_block_pattern_category(
+				'trinity-preschool',
+				array( 'label' => __( 'Trinity Preschool', 'trinity-preschool' ) )
+			);
+		}
 
-		if ( file_exists( $extended_day_pattern ) ) {
+		$patterns = array(
+			'extended-day-program' => array(
+				'title'    => __( 'Extended Day Program', 'trinity-preschool' ),
+				'inserter' => false,
+			),
+			'teacher-card'         => array(
+				'title'    => __( 'Teacher Card', 'trinity-preschool' ),
+				'inserter' => true,
+			),
+		);
+
+		foreach ( $patterns as $slug => $pattern ) {
+			$pattern_path = get_theme_file_path( "/patterns/{$slug}.php" );
+
+			if ( ! file_exists( $pattern_path ) ) {
+				continue;
+			}
+
 			ob_start();
-			include $extended_day_pattern;
-			$extended_day_content = ob_get_clean();
+			include $pattern_path;
+			$pattern_content = ob_get_clean();
 
 			register_block_pattern(
-				'trinity-preschool/extended-day-program',
+				"trinity-preschool/{$slug}",
 				array(
-					'title'      => __( 'Extended Day Program', 'trinity-preschool' ),
+					'title'      => $pattern['title'],
 					'categories' => array( 'trinity-preschool' ),
-					'inserter'   => false,
-					'content'    => $extended_day_content,
+					'inserter'   => $pattern['inserter'],
+					'content'    => $pattern_content,
 				)
 			);
 		}

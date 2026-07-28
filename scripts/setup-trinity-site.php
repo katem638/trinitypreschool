@@ -160,7 +160,7 @@ $media = array(
 	'teacher3'      => tp_attachment( 'teacher3', 'Michael Davis, Early Childhood Specialist', 'Michael Davis portrait' ),
 	'teacher4'      => tp_attachment( 'teacher4', 'Sophia Clark, Art and Music Instructor', 'Sophia Clark portrait' ),
 	'extended1'     => tp_attachment( 'extended1', 'Music class drum activity', 'Music class' ),
-	'extended2'     => tp_attachment( 'extended2', 'Children playing sack race outdoors', 'Exercise with Coach Pat' ),
+	'extended2'     => tp_attachment( 'extended2', 'Children practicing yoga and movement', 'Yoga class' ),
 	'extended3'     => tp_attachment( 'extended3', 'Child in karate class uniform', 'Action Karate Class' ),
 	'extended4'     => tp_attachment( 'extended4', 'Child baking dough in class', 'Little Bakers' ),
 	'extended5'     => tp_attachment( 'extended5', 'Child playing with building toys', 'Building Club' ),
@@ -196,7 +196,7 @@ $tour_form_markup = <<<'HTML'
 
 	<fieldset class="tp-tour-choice-field">
 		<legend>Best way to reach you</legend>
-		[radio contact-method use_label_element default:1 "Text" "Email" "Call"]
+		[radio contact-method use_label_element default:1 "Email" "Call"]
 	</fieldset>
 
 	<fieldset class="tp-tour-child-card">
@@ -239,7 +239,7 @@ $tour_form_markup = <<<'HTML'
 
 	<fieldset class="tp-tour-choice-field tp-tour-day-card">
 		<legend>I'd love a tour on a...</legend>
-		[radio tour-day use_label_element default:3 "Tue" "Wed" "Thu" "Fri"]
+		[radio tour-day use_label_element default:4 "Mon" "Tue" "Wed" "Thu" "Fri"]
 	</fieldset>
 
 	<div class="tp-tour-submit-row">[submit class:tp-tour-submit "Book my tour"]</div>

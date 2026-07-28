@@ -413,7 +413,7 @@
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"className":"tp-note-copy"} -->
-			<p class="tp-note-copy">A $50 non-refundable registration fee is due, per student, at the time of enrollment. Holds your spot for the school year.</p>
+			<p class="tp-note-copy">A $50 non-refundable registration fee is due per student at the time of enrollment. This holds your spot for the school year.</p>
 			<!-- /wp:paragraph -->
 		</article>
 		<!-- /wp:group -->
@@ -429,7 +429,7 @@
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"className":"tp-note-copy"} -->
-			<p class="tp-note-copy">The two-day option is only offered for 2.5-year-olds. Email <a href="mailto:candonie@trinitymoorestown.org">Christine Andonie</a> with any questions.</p>
+			<p class="tp-note-copy">The two-day option is available only for 2.5-year-olds. Email <a href="mailto:candonie@trinitymoorestown.org">Christine Andonie</a> with any questions.</p>
 			<!-- /wp:paragraph -->
 		</article>
 		<!-- /wp:group -->
@@ -445,7 +445,7 @@
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"className":"tp-note-copy"} -->
-			<p class="tp-note-copy">Extra Care, Enrichment Classes, Community Service and Chapel all available alongside your program, billed separately.</p>
+			<p class="tp-note-copy">Extra care, enrichment classes, community service, and chapel are available alongside your program, billed separately.</p>
 			<!-- /wp:paragraph -->
 		</article>
 		<!-- /wp:group -->
