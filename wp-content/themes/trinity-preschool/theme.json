@@ -89,19 +89,110 @@
 			"fluid": true,
 			"fontFamilies": [
 				{
-					"slug": "rounded",
-					"fontFamily": "'Nunito Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-					"name": "Nunito Sans"
+					"slug": "body",
+					"fontFamily": "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+					"name": "Body (Poppins)",
+					"fontFace": [
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [ "file:./assets/fonts/poppins-latin-400.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [ "file:./assets/fonts/poppins-latin-500.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [ "file:./assets/fonts/poppins-latin-600.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [ "file:./assets/fonts/poppins-latin-700.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "800",
+							"src": [ "file:./assets/fonts/poppins-latin-800.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "900",
+							"src": [ "file:./assets/fonts/poppins-latin-900.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [ "file:./assets/fonts/poppins-latin-italic-400.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "italic",
+							"fontWeight": "500",
+							"src": [ "file:./assets/fonts/poppins-latin-italic-500.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "italic",
+							"fontWeight": "600",
+							"src": [ "file:./assets/fonts/poppins-latin-italic-600.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [ "file:./assets/fonts/poppins-latin-italic-700.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "italic",
+							"fontWeight": "800",
+							"src": [ "file:./assets/fonts/poppins-latin-italic-800.woff2" ]
+						},
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Poppins",
+							"fontStyle": "italic",
+							"fontWeight": "900",
+							"src": [ "file:./assets/fonts/poppins-latin-italic-900.woff2" ]
+						}
+					]
 				},
 				{
-					"slug": "display",
-					"fontFamily": "'Fraunces', Georgia, 'Times New Roman', serif",
-					"name": "Fraunces"
-				},
-				{
-					"slug": "serif",
-					"fontFamily": "Georgia, 'Times New Roman', serif",
-					"name": "Serif"
+					"slug": "heading",
+					"fontFamily": "Fredoka, 'Arial Rounded MT Bold', sans-serif",
+					"name": "Heading (Fredoka)",
+					"fontFace": [
+						{
+							"fontDisplay": "swap",
+							"fontFamily": "Fredoka",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "300 700",
+							"src": [ "file:./assets/fonts/fredoka-latin-variable.woff2" ]
+						}
+					]
 				}
 			],
 			"fontSizes": [
@@ -134,7 +225,7 @@
 			"text": "var:preset|color|ink"
 		},
 		"typography": {
-			"fontFamily": "var:preset|font-family|rounded",
+			"fontFamily": "var:preset|font-family|body",
 			"fontSize": "var:preset|font-size|medium",
 			"fontWeight": "500",
 			"lineHeight": "1.55"
@@ -159,7 +250,7 @@
 			},
 			"heading": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|rounded",
+					"fontFamily": "var:preset|font-family|heading",
 					"fontWeight": "700",
 					"lineHeight": "1.08"
 				}

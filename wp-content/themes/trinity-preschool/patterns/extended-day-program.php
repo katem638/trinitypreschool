@@ -59,7 +59,6 @@
 					</div>
 					<ul>
 						<li>Information on classes and pricing distributed seasonally</li>
-						<li>Some classes may require an extra supply fee</li>
 						<li>Visiting Instructor Classes do not include Lunch Bunch (Additional $10 per day)</li>
 					</ul>
 				</div>
@@ -93,8 +92,8 @@
 			<h2 id="tp-extended-includes-title">Extended Day bundles the afternoon together.</h2>
 		</div>
 		<ul>
-			<li>Extended Day includes Lunch Bunch until 1:30 PM and Trinity enrichment classes until 3:00 PM on the weekly day or days your child attends.</li>
-			<li>Families may register for individual enrichment classes without choosing full Extended Day.</li>
+			<li>Extended Day includes Lunch Bunch, Trinity Preschool-led enrichment classes, and extended care until 3:00 PM on the weekly day or days your child attends.</li>
+			<li>Families may register for individual enrichment classes without choosing full Extended Day. These days will include Lunch Bunch and end at 1:30 PM.</li>
 			<li>Visiting Instructor Classes, such as Music and Karate, are priced separately and are not included in Extended Day tuition.</li>
 		</ul>
 	</section>
@@ -118,9 +117,9 @@
 			<div class="tp-row-body">
 				<p>Children practice simple stretches, breath work, balance, and mindful movement in a calm afternoon setting.</p>
 				<dl>
-					<div><dt>Schedule</dt><dd>Alternating Fridays</dd></div>
+					<div><dt>Schedule</dt><dd>Thursdays</dd></div>
 					<div><dt>Ages</dt><dd>Ages 3+</dd></div>
-					<div><dt>Length</dt><dd><em>TBA</em></dd></div>
+					<div><dt>Length</dt><dd>30 min</dd></div>
 					<div><dt>Teacher</dt><dd><em>TBA</em></dd></div>
 				</dl>
 			</div>
@@ -139,7 +138,7 @@
 				<dl>
 					<div><dt>Schedule</dt><dd>Mondays</dd></div>
 					<div><dt>Ages</dt><dd>4- and 5-year-olds</dd></div>
-					<div><dt>Length</dt><dd>Afternoon</dd></div>
+					<div><dt>Length</dt><dd>1 hour</dd></div>
 					<div><dt>Teacher</dt><dd>Trinity staff</dd></div>
 				</dl>
 			</div>
@@ -156,9 +155,9 @@
 			<div class="tp-row-body">
 				<p>Small-group building club with weekly objectives, structured builds, and free-build time.</p>
 				<dl>
-					<div><dt>Schedule</dt><dd>Tuesday or Wednesday</dd></div>
+					<div><dt>Schedule</dt><dd>Wednesdays</dd></div>
 					<div><dt>Ages</dt><dd>4- and 5-year-olds</dd></div>
-					<div><dt>Length</dt><dd>Afternoon</dd></div>
+					<div><dt>Length</dt><dd>1 hour</dd></div>
 					<div><dt>Teacher</dt><dd>Trinity staff</dd></div>
 				</dl>
 			</div>
@@ -169,15 +168,15 @@
 				<div class="tp-row-title">
 					<span aria-hidden="true">A</span>
 					<h2>STEAM</h2>
-					<p>Hands-on art and science</p>
+					<p>Science, technology, engineering, arts, and math</p>
 				</div>
 			</header>
 			<div class="tp-row-body">
-				<p>Children explore hands-on science activities paired with related art projects.</p>
+				<p>Children explore, create, build, and problem-solve through playful, hands-on STEAM projects.</p>
 				<dl>
-					<div><dt>Schedule</dt><dd>Every other Friday</dd></div>
+					<div><dt>Schedule</dt><dd>Fridays</dd></div>
 					<div><dt>Ages</dt><dd>4- and 5-year-olds</dd></div>
-					<div><dt>Length</dt><dd>Afternoon</dd></div>
+					<div><dt>Length</dt><dd>1 hour</dd></div>
 					<div><dt>Teacher</dt><dd>Trinity staff</dd></div>
 				</dl>
 			</div>

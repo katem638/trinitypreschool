@@ -24,6 +24,10 @@ if ( ! function_exists( 'trinity_preschool_register_block_patterns' ) ) {
 				'title'    => __( 'Extended Day Program', 'trinity-preschool' ),
 				'inserter' => false,
 			),
+			'get-involved'         => array(
+				'title'    => __( 'Get Involved', 'trinity-preschool' ),
+				'inserter' => false,
+			),
 			'teacher-card'         => array(
 				'title'    => __( 'Teacher Card', 'trinity-preschool' ),
 				'inserter' => true,
@@ -124,16 +128,9 @@ if ( ! function_exists( 'trinity_preschool_enqueue_styles' ) ) {
 		$stylesheet_path = get_stylesheet_directory() . '/style.css';
 
 		wp_enqueue_style(
-			'trinity-preschool-fonts',
-			'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap',
-			array(),
-			null
-		);
-
-		wp_enqueue_style(
 			'trinity-preschool-style',
 			get_stylesheet_uri(),
-			array( 'trinity-preschool-fonts' ),
+			array(),
 			file_exists( $stylesheet_path ) ? filemtime( $stylesheet_path ) : wp_get_theme()->get( 'Version' )
 		);
 
