@@ -71,6 +71,9 @@ foreach ( $expected_pages as $slug ) {
 	if ( ! wp_get_post_revisions( $page->ID ) ) {
 		$errors[] = $slug . ' has no revision history.';
 	}
+	if ( 'page-landing' !== get_page_template_slug( $page->ID ) ) {
+		$errors[] = $slug . ' is not assigned to the Designed Page template.';
+	}
 
 	$slug_template = get_stylesheet_directory() . '/templates/page-' . $slug . '.html';
 	if ( file_exists( $slug_template ) ) {
@@ -78,10 +81,27 @@ foreach ( $expected_pages as $slug ) {
 	}
 }
 
-foreach ( array( 'page.html', 'front-page.html' ) as $template_file ) {
+foreach ( array( 'page.html', 'page-landing.html', 'front-page.html' ) as $template_file ) {
 	$template_path = get_stylesheet_directory() . '/templates/' . $template_file;
 	if ( ! file_exists( $template_path ) || ! str_contains( file_get_contents( $template_path ), 'wp:post-content' ) ) {
 		$errors[] = $template_file . ' is missing its Post Content block.';
+	}
+}
+
+$default_page_template = file_get_contents( get_stylesheet_directory() . '/templates/page.html' );
+if ( ! str_contains( $default_page_template, 'wp:post-title' ) || ! str_contains( $default_page_template, 'tp-page-title-band' ) ) {
+	$errors[] = 'page.html is missing its automatic branded Page title.';
+}
+
+$landing_page_template = file_get_contents( get_stylesheet_directory() . '/templates/page-landing.html' );
+if ( str_contains( $landing_page_template, 'wp:post-title' ) ) {
+	$errors[] = 'page-landing.html must not add a second Page title.';
+}
+
+foreach ( array( '404.html', 'archive.html', 'search.html', 'single.html' ) as $fallback_template ) {
+	$template_path = get_stylesheet_directory() . '/templates/' . $fallback_template;
+	if ( ! file_exists( $template_path ) || ! str_contains( file_get_contents( $template_path ), 'level":1' ) ) {
+		$errors[] = $fallback_template . ' is missing or does not provide an H1-level title.';
 	}
 }
 
@@ -107,6 +127,9 @@ foreach ( $forks as $fork ) {
 if ( '2026-08-17-v4' !== get_option( 'trinity_editable_content_migration' ) ) {
 	$errors[] = 'The expected editable-content migration version is not recorded.';
 }
+if ( '2026-08-30-v1' !== get_option( 'trinity_theme_hardening_migration' ) ) {
+	$errors[] = 'The expected theme-hardening migration version is not recorded.';
+}
 if ( ! post_type_exists( 'tp_event' ) || ! taxonomy_exists( 'tp_event_type' ) ) {
 	$errors[] = 'The portable Event post type or Event Type taxonomy is unavailable.';
 }
@@ -122,6 +145,41 @@ foreach ( array( 'contact', 'schedule-a-tour' ) as $form_page_slug ) {
 	$form_page = get_page_by_path( $form_page_slug, OBJECT, 'page' );
 	if ( ! $form_page || ! has_block( 'contact-form-7/contact-form-selector', $form_page ) ) {
 		$errors[] = $form_page_slug . ' is missing its Contact Form 7 selector block.';
+	}
+}
+
+$navigation = get_page_by_path( 'primary-navigation', OBJECT, 'wp_navigation' );
+$header     = file_get_contents( get_stylesheet_directory() . '/parts/header.html' );
+if (
+	! $navigation
+	|| 'wp_navigation' !== $navigation->post_type
+	|| 'Primary Navigation' !== $navigation->post_title
+	|| ! str_contains( $header, 'tp-primary-nav' )
+	|| str_contains( $header, '"ref":' )
+	|| str_contains( $header, 'wp:navigation-link' )
+	|| str_contains( $navigation->post_content, '"url":"#"' )
+) {
+	$errors[] = 'The Header is not connected portably to the named Primary Navigation entity or still contains inline/placeholder links.';
+}
+
+$footer = file_get_contents( get_stylesheet_directory() . '/parts/footer.html' );
+foreach ( array( 'mailto:trinityepiscopalpreschool.org', 'https://www.instagram.com/', 'https://www.facebook.com/' ) as $placeholder_link ) {
+	if ( str_contains( $footer, $placeholder_link ) ) {
+		$errors[] = 'The Footer still contains a placeholder or malformed link: ' . $placeholder_link;
+	}
+}
+
+foreach ( array( 'home', 'parent-corner' ) as $payment_page_slug ) {
+	$payment_page = get_page_by_path( $payment_page_slug, OBJECT, 'page' );
+	if ( $payment_page && str_contains( $payment_page->post_content, 'Make a secure online tuition payment through our parent portal.' ) ) {
+		$errors[] = $payment_page_slug . ' still promises direct online tuition payment.';
+	}
+}
+
+$hardening_css = file_get_contents( get_stylesheet_directory() . '/assets/css/theme-hardening.css' );
+foreach ( array( '.tp-pattern-hero', '.tp-program-page', '.tp-resource-page', '.tp-contact-cta' ) as $starter_selector ) {
+	if ( ! str_contains( $hardening_css, $starter_selector ) ) {
+		$errors[] = 'Starter-pattern stylesheet is missing ' . $starter_selector . '.';
 	}
 }
 

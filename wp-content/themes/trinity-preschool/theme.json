@@ -1,6 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
+	"customTemplates": [
+		{
+			"name": "page-landing",
+			"postTypes": [ "page" ],
+			"title": "Designed Page (title in content)"
+		}
+	],
 	"templateParts": [
 		{
 			"area": "header",
@@ -46,8 +53,60 @@
 					"slug": "coral",
 					"color": "#ef8a73",
 					"name": "Coral"
+				},
+				{
+					"slug": "navy",
+					"color": "#28355f",
+					"name": "Trinity Navy"
+				},
+				{
+					"slug": "hero-coral",
+					"color": "#f17948",
+					"name": "Hero Coral"
+				},
+				{
+					"slug": "warm-cream",
+					"color": "#fff9eb",
+					"name": "Warm Cream Light"
+				},
+				{
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "White"
 				}
 			]
+		},
+		"custom": {
+			"brand": {
+				"blue": "#2f6fa3",
+				"navy": "#28355f",
+				"ink-deep": "#16344d",
+				"deep-blue": "#2f4d82",
+				"muted-blue": "#667aa7",
+				"bright-blue": "#3f78d7",
+				"button-blue": "#427fc5",
+				"coral": "#ef8a73",
+				"action-rust": "#c95f3b",
+				"hero-coral": "#f17948",
+				"cream": "#fbf7ec",
+				"warm-cream": "#fff9eb",
+				"surface": "#fffefa",
+				"gold": "#f4c94f",
+				"sky": "#9fc0d1",
+				"deep-sky": "#6f99b6",
+				"white": "#ffffff"
+			},
+			"border": {
+				"radius": {
+					"small": "8px",
+					"card": "18px",
+					"pill": "999px"
+				}
+			},
+			"shadow": {
+				"card": "0 18px 45px rgba(40, 53, 95, 0.12)",
+				"button": "0 8px 0 rgba(40, 53, 95, 0.14)"
+			}
 		},
 		"layout": {
 			"contentSize": "760px",
@@ -256,6 +315,25 @@
 				}
 			},
 			"link": {
+				"color": {
+					"text": "var:preset|color|ink"
+				}
+			}
+		},
+		"blocks": {
+			"core/button": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|body",
+					"fontWeight": "700"
+				}
+			},
+			"core/navigation": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|body",
+					"fontWeight": "700"
+				}
+			},
+			"core/separator": {
 				"color": {
 					"text": "var:preset|color|ink"
 				}

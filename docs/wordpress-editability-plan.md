@@ -2,6 +2,8 @@
 
 Status: implemented locally on 2026-08-17, including the v4 follow-up for Get Involved, Meet Our Director, and Meet The Teachers. This file preserves the audited roadmap and acceptance criteria; see `docs/wordpress-editor-handoff.md` for the operating workflow and remaining production decisions.
 
+Theme-hardening follow-up completed locally on 2026-08-30: migrated Pages now use a registered Designed Page template that preserves their content-owned H1/hero, while the default Page template supplies an automatic branded Post Title for new Pages. The follow-up also adds styled starter content, 404/search/archive/single fallbacks, a named Primary Navigation entity, curated block-lock permissions, centralized brand tokens, and release-audit coverage for those contracts.
+
 ## Follow-up migration for the remaining P2 pages
 
 The initial migration put these three pages in `post_content`, but its generic curation pass did not complete the page-specific work in this plan. It left broad `contentOnly` locks on the Director profile, every teacher card, and several Get Involved components; repeated generic List View names; a decorative Custom HTML block on Meet The Teachers; and empty Media Library alt text for the Director portrait.

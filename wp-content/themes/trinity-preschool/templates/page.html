@@ -1,8 +1,18 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","className":"tp-main","layout":{"type":"default"}} -->
-<main class="wp-block-group tp-main">
-	<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+<!-- wp:group {"tagName":"main","className":"tp-main tp-default-page","layout":{"type":"default"}} -->
+<main class="wp-block-group tp-main tp-default-page">
+	<!-- wp:group {"align":"full","className":"tp-page-title-band","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull tp-page-title-band">
+		<!-- wp:post-title {"level":1,"align":"wide"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"align":"full","className":"tp-default-page-body","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull tp-default-page-body">
+		<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+	</div>
+	<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 
