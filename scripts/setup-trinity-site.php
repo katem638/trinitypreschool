@@ -9,6 +9,10 @@ if ( ! class_exists( 'WP_CLI' ) ) {
 	exit( "This script is intended to run through WP-CLI.\n" );
 }
 
+if ( get_option( 'trinity_editable_content_migration' ) ) {
+	WP_CLI::error( 'This bootstrap script is retired after the editable-content migration because rerunning it would overwrite editor-owned pages and forms.' );
+}
+
 function tp_attachment( $slug, $alt, $title = null ) {
 	$attachments = get_posts(
 		array(
@@ -217,9 +221,9 @@ $tour_form_markup = <<<'HTML'
 		</div>
 	</fieldset>
 
-	<button type="button" class="tp-tour-add-sibling" aria-expanded="false" aria-controls="tp-tour-sibling-fields"><span aria-hidden="true">+</span> Add a sibling</button>
+	<button type="button" class="tp-tour-add-sibling" aria-expanded="false"><span aria-hidden="true">+</span> Add a sibling</button>
 
-	<fieldset class="tp-tour-child-card tp-tour-child-card-sibling" id="tp-tour-sibling-fields" hidden>
+	<fieldset class="tp-tour-child-card tp-tour-child-card-sibling tp-tour-sibling-fields">
 		<legend><span>Sibling</span><small>optional</small></legend>
 		<div class="tp-tour-child-grid">
 			<div class="tp-tour-field">
@@ -242,7 +246,7 @@ $tour_form_markup = <<<'HTML'
 		[radio tour-day use_label_element default:4 "Mon" "Tue" "Wed" "Thu" "Fri"]
 	</fieldset>
 
-	<div class="tp-tour-submit-row">[submit class:tp-tour-submit "Book my tour"]</div>
+	<div class="tp-tour-submit-row">[submit class:tp-tour-submit "Request my tour"]</div>
 </div>
 HTML;
 

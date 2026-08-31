@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "trinity-preschool/weekly-events",
+	"version": "1.0.0",
+	"title": "Trinity Weekly Events",
+	"category": "widgets",
+	"icon": "calendar-alt",
+	"description": "Displays the configured Monday-through-Saturday school event grid.",
+	"textdomain": "trinity-site-functionality",
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false,
+		"multiple": false
+	},
+	"editorScript": "file:./editor.js",
+	"render": "file:./render.php"
+}

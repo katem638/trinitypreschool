@@ -3,7 +3,7 @@ Theme Name: Trinity Preschool
 Theme URI: https://trinity-preschool.ddev.site
 Author: Trinity Preschool
 Description: Custom block theme scaffold for the Trinity Preschool website.
-Version: 0.1.0
+Version: 0.2.0
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
@@ -23,6 +23,193 @@ Text Domain: trinity-preschool
 	--tp-line: rgba(47, 111, 163, 0.22);
 	--tp-font: var(--wp--preset--font-family--body, Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
 	--tp-display-font: var(--wp--preset--font-family--heading, Fredoka, "Arial Rounded MT Bold", sans-serif);
+}
+
+/* Editable-content migration support. */
+.tp-page-title-band {
+	background: var(--tp-navy);
+	box-sizing: border-box;
+	color: #fff;
+	padding: clamp(44px, 7vw, 78px) clamp(20px, 4vw, 40px);
+}
+
+.tp-page-title-band h1 {
+	color: #fff;
+	font-size: clamp(2.7rem, 6vw, 5rem);
+	margin-block: 0;
+}
+
+.tp-week-events-grid-block,
+.tp-week-events-grid-block > * {
+	margin-block-start: 0;
+}
+
+.tp-week-current-range {
+	color: var(--tp-navy);
+	font-family: var(--tp-display-font);
+	font-size: clamp(1.35rem, 2.2vw, 2rem);
+	font-weight: 700;
+	line-height: 1;
+	margin: -18px 0 26px;
+}
+
+.tp-week-events-editor-preview {
+	border: 1px dashed rgba(40, 53, 95, 0.35);
+	padding: 16px;
+}
+
+.tp-week-events-editor-label {
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.tp-description-list {
+	margin-block-start: 0;
+}
+
+/*
+ * These page designs were migrated from hand-authored HTML to nested Group
+ * blocks. WordPress gives flow-layout block siblings a default top margin,
+ * which must not be added on top of the grid and flex gaps defined below.
+ * Keep this reset low-specificity so each component's intentional margins
+ * continue to win later in the stylesheet.
+ */
+:is(.tp-extended-page, .tp-forms-page, .tp-tour-page, .tp-pickup-page) > *,
+:where(.tp-extended-page, .tp-forms-page, .tp-tour-page, .tp-pickup-page) .wp-block-group > * {
+	margin-block-end: 0;
+	margin-block-start: 0;
+}
+
+.tp-row-body .tp-description-list {
+	border-left: 1px solid rgba(102, 122, 167, 0.24);
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 0.82fr 0.78fr 0.64fr 0.82fr;
+	margin: 0;
+	padding-left: 18px;
+}
+
+.tp-row-body .tp-description-item {
+	min-width: 0;
+}
+
+.tp-row-body .tp-description-term {
+	color: #667aa7;
+	font-size: 0.67rem;
+	font-weight: 900;
+	letter-spacing: 0.12em;
+	line-height: 1;
+	margin: 0 0 3px;
+	text-transform: uppercase;
+}
+
+.tp-row-body .tp-description-value {
+	color: var(--tp-navy);
+	font-family: var(--tp-display-font);
+	font-size: 0.87rem;
+	font-weight: 800;
+	line-height: 1.06;
+	margin: 0;
+}
+
+.tp-lunch-glance .tp-description-list {
+	display: grid;
+	gap: 19px;
+	margin: 22px 0 0;
+}
+
+.tp-lunch-glance .tp-description-item {
+	align-items: end;
+	display: grid;
+	gap: 18px;
+	grid-template-columns: 94px minmax(80px, 1fr) minmax(0, auto);
+}
+
+.tp-lunch-glance .tp-description-item::before {
+	border-bottom: 2px dotted rgba(40, 53, 95, 0.22);
+	content: "";
+	grid-column: 2;
+	grid-row: 1;
+	margin-bottom: 5px;
+}
+
+.tp-lunch-glance .tp-description-term {
+	color: #52617f;
+	font-size: 0.76rem;
+	font-weight: 900;
+	grid-column: 1;
+	grid-row: 1;
+	letter-spacing: 0;
+	line-height: 1;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.tp-lunch-glance .tp-description-value {
+	color: var(--tp-navy);
+	font-family: var(--tp-display-font);
+	font-size: 1.28rem;
+	font-weight: 800;
+	grid-column: 3;
+	line-height: 1.1;
+	margin: 0;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.wp-block-file.tp-form-download > a:not(.wp-block-file__button) {
+	display: none;
+}
+
+.wp-block-file.tp-form-download .wp-block-file__button {
+	background: transparent;
+	border-radius: inherit;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+.tp-feature-copy > p,
+.tp-feature-meta > p,
+.tp-forms-section-head > div > p,
+.tp-return-hours > p,
+.tp-pickup-time > p,
+.tp-extended-row header > p,
+.tp-row-title > p,
+.tp-stay-card header > p,
+.tp-extended-class-card > p {
+	margin: 0;
+}
+
+.tp-feature-copy > p > span,
+.tp-feature-meta > p > span,
+.tp-return-hours > p > span,
+.tp-stay-card header > p > span,
+.tp-row-title > p > span {
+	color: inherit;
+}
+
+.tp-feature-meta > p > strong,
+.tp-return-hours > p > strong,
+.tp-extended-row header > p > strong,
+.tp-extended-class-card > p > strong {
+	color: inherit;
+}
+
+@media (max-width: 760px) {
+	.tp-row-body .tp-description-list {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 440px) {
+	.tp-row-body .tp-description-list {
+		grid-template-columns: 1fr;
+	}
 }
 
 .tp-extended-page {
@@ -56,12 +243,13 @@ Text Domain: trinity-preschool
 	align-items: center;
 	color: #667aa7;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	font-size: 0.9rem;
 	font-weight: 700;
 	gap: 0.3rem;
 	line-height: 1.2;
 	margin-bottom: 28px;
+	white-space: nowrap;
 }
 
 .tp-extended-breadcrumb a {
@@ -730,13 +918,14 @@ Text Domain: trinity-preschool
 }
 
 .tp-row-title {
-	align-items: center;
+	align-items: baseline;
 	display: flex;
 	gap: 13px;
 	min-width: 0;
 }
 
 .tp-row-title > span {
+	align-self: center;
 	align-items: center;
 	background: rgba(255, 255, 255, 0.26);
 	border-radius: 8px;
@@ -2659,8 +2848,10 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 
 .tp-title-rule {
 	background: var(--tp-blue);
+	border: 0;
 	height: 1px;
 	margin: 0 auto clamp(20px, 3vw, 30px);
+	opacity: 1;
 	width: 26px;
 }
 
@@ -4188,7 +4379,16 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	font-size: 0.9rem;
 	font-weight: 700;
 	line-height: 1.45;
-	margin: -0.2rem 1rem 1rem;
+	margin: -0.2rem 1rem 0;
+}
+
+.tp-tour-faq-item[open] {
+	padding-bottom: 1rem;
+}
+
+.tp-tour-day-card legend {
+	position: relative;
+	top: 0.45rem;
 }
 
 .tp-tuition-page {
@@ -7138,4 +7338,30 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	.tp-involved-list li {
 		font-size: 0.94rem;
 	}
+}
+
+/* Global typography contract: headings use Fredoka; readable content uses Poppins. */
+:where(.wp-site-blocks, .editor-styles-wrapper) :where(h1, h2, h3, h4, h5, h6) {
+	font-family: var(--tp-display-font);
+}
+
+:where(.wp-site-blocks, .editor-styles-wrapper) :where(
+	p,
+	li,
+	dt,
+	dd,
+	label,
+	input,
+	textarea,
+	select,
+	button,
+	summary,
+	figcaption,
+	blockquote,
+	cite,
+	address,
+	th,
+	td
+) {
+	font-family: var(--tp-font);
 }
