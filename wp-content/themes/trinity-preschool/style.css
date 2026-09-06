@@ -2187,6 +2187,11 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	color: var(--tp-navy);
 }
 
+.tp-family-card-sky {
+	background: var(--tp-sky);
+	color: var(--tp-navy);
+}
+
 .tp-family-card h3 {
 	color: inherit;
 	font-family: var(--tp-display-font);
@@ -2231,6 +2236,10 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 }
 
 .tp-family-card-gold .tp-card-action .wp-block-button__link {
+	color: var(--tp-navy);
+}
+
+.tp-family-card-sky .tp-card-action .wp-block-button__link {
 	color: var(--tp-navy);
 }
 
@@ -7605,7 +7614,7 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 
 .tp-involved-board h2 {
 	color: var(--tp-white);
-	margin-bottom: 0;
+	margin-bottom: 24px;
 }
 
 .tp-involved-board-card {
@@ -7621,11 +7630,42 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 }
 
 .tp-involved-board-copy {
-	color: #46516d;
+	color: rgba(255, 255, 255, 0.88);
 	font-size: clamp(1.04rem, 1.5vw, 1.22rem);
-	font-weight: 750;
+	font-weight: 650;
 	line-height: 1.58;
 	margin: 0;
+}
+
+.tp-involved-board-invite {
+	background: rgba(255, 255, 255, 0.08);
+	border-left: 5px solid var(--tp-gold);
+	border-radius: 10px;
+	color: var(--tp-white);
+	font-size: clamp(1rem, 1.3vw, 1.14rem);
+	font-weight: 800;
+	line-height: 1.5;
+	margin-top: 30px;
+	padding: 22px 24px;
+}
+
+.tp-involved-board-invite p {
+	margin: 0;
+}
+
+.tp-involved-board-responsibilities {
+	background: var(--tp-warm-cream);
+	border: 0;
+	box-shadow: 10px 11px 0 var(--tp-hero-coral);
+}
+
+.tp-involved-board-responsibilities .tp-involved-card-kicker {
+	color: var(--tp-action-rust);
+}
+
+.tp-involved-board-responsibilities .tp-involved-list li::before {
+	background: #ffe2d6;
+	color: var(--tp-action-rust);
 }
 
 @media (max-width: 900px) {
@@ -7689,6 +7729,10 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	}
 
 	.tp-involved-board-card {
+		box-shadow: 6px 7px 0 var(--tp-hero-coral);
+	}
+
+	.tp-involved-board-responsibilities {
 		box-shadow: 6px 7px 0 var(--tp-hero-coral);
 	}
 
