@@ -130,6 +130,9 @@ if ( '2026-08-17-v4' !== get_option( 'trinity_editable_content_migration' ) ) {
 if ( '2026-08-30-v1' !== get_option( 'trinity_theme_hardening_migration' ) ) {
 	$errors[] = 'The expected theme-hardening migration version is not recorded.';
 }
+if ( '2026-09-06-v1' !== get_option( 'trinity_visual_polish_migration' ) ) {
+	$errors[] = 'The expected visual-polish migration version is not recorded.';
+}
 if ( ! post_type_exists( 'tp_event' ) || ! taxonomy_exists( 'tp_event_type' ) ) {
 	$errors[] = 'The portable Event post type or Event Type taxonomy is unavailable.';
 }
@@ -167,6 +170,22 @@ foreach ( array( 'mailto:trinityepiscopalpreschool.org', 'https://www.instagram.
 	if ( str_contains( $footer, $placeholder_link ) ) {
 		$errors[] = 'The Footer still contains a placeholder or malformed link: ' . $placeholder_link;
 	}
+}
+if ( 3 !== substr_count( $footer, '<!-- wp:column {' ) ) {
+	$errors[] = 'The Footer is not using the intended three-column structure.';
+}
+if ( ! str_contains( $footer, 'Request a Tour' ) || ! str_contains( $footer, 'Email the Preschool' ) ) {
+	$errors[] = 'The Footer is missing its readable contact or tour CTA text.';
+}
+
+$extended_page = get_page_by_path( 'extended-days-program', OBJECT, 'page' );
+if ( $extended_page && has_block( 'core/separator', $extended_page ) ) {
+	$errors[] = 'Extended Days still contains the obsolete Separator block.';
+}
+
+$pickup_page = get_page_by_path( 'drop-off-pick-up', OBJECT, 'page' );
+if ( $pickup_page && str_contains( $pickup_page->post_content, 'tp-pickup-image-placeholder' ) ) {
+	$errors[] = 'Drop-off & Pick-up still contains the empty image-placeholder block.';
 }
 
 foreach ( array( 'home', 'parent-corner' ) as $payment_page_slug ) {

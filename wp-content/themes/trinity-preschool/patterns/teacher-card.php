@@ -9,11 +9,13 @@
 
 <!-- wp:group {"tagName":"article","metadata":{"name":"Teacher: Teacher Name"},"className":"tp-teacher-card","layout":{"type":"default"}} -->
 <article class="wp-block-group tp-teacher-card">
-	<!-- wp:paragraph {"className":"tp-teacher-placeholder","metadata":{"name":"Headshot placeholder"}} -->
-	<p class="tp-teacher-placeholder">TN</p>
-	<!-- /wp:paragraph -->
-	<!-- wp:group {"className":"tp-teacher-card-body","metadata":{"name":"Profile content"},"layout":{"type":"default"}} -->
-	<div class="wp-block-group tp-teacher-card-body">
+	<!-- wp:group {"className":"tp-teacher-profile","metadata":{"name":"Portrait and introduction"},"layout":{"type":"default"}} -->
+	<div class="wp-block-group tp-teacher-profile">
+		<!-- wp:paragraph {"className":"tp-teacher-placeholder","metadata":{"name":"Headshot placeholder"}} -->
+		<p class="tp-teacher-placeholder">TN</p>
+		<!-- /wp:paragraph -->
+		<!-- wp:group {"className":"tp-teacher-card-body","metadata":{"name":"Profile content"},"layout":{"type":"default"}} -->
+		<div class="wp-block-group tp-teacher-card-body">
 		<!-- wp:paragraph {"className":"tp-teacher-role","metadata":{"name":"Role"}} -->
 		<p class="tp-teacher-role">Role</p>
 		<!-- /wp:paragraph -->
@@ -26,22 +28,24 @@
 		<!-- wp:paragraph {"className":"tp-teacher-summary","metadata":{"name":"Short introduction"}} -->
 		<p class="tp-teacher-summary">Short intro sentence for the closed card.</p>
 		<!-- /wp:paragraph -->
-		<!-- wp:details {"className":"tp-teacher-bio","metadata":{"name":"Biography / Q&A"}} -->
-		<details class="wp-block-details tp-teacher-bio">
-			<summary>Read biography and Q&amp;A</summary>
-			<!-- wp:group {"className":"tp-teacher-qa","metadata":{"name":"Biography answers"},"layout":{"type":"default"}} -->
-			<div class="wp-block-group tp-teacher-qa">
-				<!-- wp:heading {"level":4} -->
-				<h4 class="wp-block-heading">What age group and/or room color do you teach?</h4>
-				<!-- /wp:heading -->
-				<!-- wp:paragraph -->
-				<p>Answer goes here.</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-		</details>
-		<!-- /wp:details -->
+		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
+	<!-- wp:details {"className":"tp-teacher-bio","metadata":{"name":"Biography / Q&A"}} -->
+	<details class="wp-block-details tp-teacher-bio">
+		<summary>Read biography and Q&amp;A</summary>
+		<!-- wp:group {"className":"tp-teacher-qa","metadata":{"name":"Biography answers"},"layout":{"type":"default"}} -->
+		<div class="wp-block-group tp-teacher-qa">
+			<!-- wp:heading {"level":4} -->
+			<h4 class="wp-block-heading">What age group and/or room color do you teach?</h4>
+			<!-- /wp:heading -->
+			<!-- wp:paragraph -->
+			<p>Answer goes here.</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+	</details>
+	<!-- /wp:details -->
 </article>
 <!-- /wp:group -->
