@@ -5,7 +5,7 @@
 		{
 			"name": "page-landing",
 			"postTypes": [ "page" ],
-			"title": "Designed Page (title in content)"
+			"title": "Feature Page — custom hero"
 		}
 	],
 	"templateParts": [
@@ -18,6 +18,11 @@
 			"area": "footer",
 			"name": "footer",
 			"title": "Footer"
+		},
+		{
+			"area": "uncategorized",
+			"name": "page-header",
+			"title": "Page Header"
 		}
 	],
 	"settings": {

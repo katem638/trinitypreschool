@@ -283,8 +283,6 @@ foreach ( $teachers as $teacher ) {
 }
 
 $home_hero_image    = tp_image_block( $media['homeimage1'], 'tp-hero-image' );
-$home_contact_image = tp_image_block( $media['homeimage2'], 'tp-contact-image' );
-
 $home_content = <<<HTML
 <!-- wp:group {"align":"full","className":"tp-home-hero","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull tp-home-hero">
@@ -365,15 +363,24 @@ $home_content = <<<HTML
 <div class="wp-block-group alignfull tp-home-contact">
 	<!-- wp:group {"align":"wide","className":"tp-contact-grid","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide tp-contact-grid">
-		{$home_contact_image}
-		<!-- wp:group {"className":"tp-contact-copy","layout":{"type":"constrained"}} -->
-		<div class="wp-block-group tp-contact-copy" id="contact-form">
+		<!-- wp:group {"className":"tp-home-contact-intro","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group tp-home-contact-intro">
 			<!-- wp:heading -->
-			<h2 class="wp-block-heading">Get in<br>Touch</h2>
+			<h2 class="wp-block-heading">Get in Touch</h2>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph -->
-			<p>Reach out to us for any inquiries, admissions, or to learn more about our engaging programs that inspire young hearts and minds.</p>
+			<p>Have a question about admissions, tours, or our programs? We would love to help.</p>
 			<!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"tp-home-contact-actions"} -->
+			<p class="tp-home-contact-actions"><a href="tel:+18562351840">856-235-1840</a><a href="mailto:candonie@trinitymoorestown.org">candonie@trinitymoorestown.org</a></p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+		<!-- wp:group {"className":"tp-contact-copy","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group tp-contact-copy" id="contact-form">
+			<!-- wp:heading {"level":3} -->
+			<h3 class="wp-block-heading">Send us a message</h3>
+			<!-- /wp:heading -->
 			<!-- wp:shortcode -->
 			{$contact_shortcode}
 			<!-- /wp:shortcode -->
@@ -514,14 +521,31 @@ $contact_content = <<<HTML
 <div class="wp-block-group alignfull tp-contact-hero">
 	<!-- wp:group {"align":"wide","className":"tp-contact-hero-grid","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide tp-contact-hero-grid">
-		{$contact_page_image}
+		<!-- wp:group {"className":"tp-contact-hero-aside","layout":{"type":"default"}} -->
+		<div class="wp-block-group tp-contact-hero-aside">
+			{$contact_page_image}
+			<!-- wp:group {"className":"tp-contact-details","layout":{"type":"constrained"}} -->
+			<div class="wp-block-group tp-contact-details">
+				<!-- wp:paragraph {"className":"tp-contact-details-title"} -->
+				<p class="tp-contact-details-title">Prefer to talk?</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"tp-contact-actions"} -->
+				<p class="tp-contact-actions"><a href="tel:+18562351840">856-235-1840</a><a href="mailto:candonie@trinitymoorestown.org">candonie@trinitymoorestown.org</a></p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"tp-contact-address"} -->
+				<p class="tp-contact-address">207 W. Main St.<br>Moorestown, NJ 08057</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
 		<!-- wp:group {"className":"tp-contact-hero-copy","layout":{"type":"constrained"}} -->
 		<div class="wp-block-group tp-contact-hero-copy">
 			<!-- wp:heading {"level":1} -->
 			<h1 class="wp-block-heading">Contact Us</h1>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph -->
-			<p>We welcome any questions you may have about our preschool programs or our curriculum. Please feel free to reach out to us using the contact information provided below. We are excited to hear from you!</p>
+			<p>Have a question about our programs or curriculum? Send us a message and we will be happy to help.</p>
 			<!-- /wp:paragraph -->
 			<!-- wp:shortcode -->
 			{$contact_shortcode}
@@ -540,7 +564,7 @@ $events_content = <<<HTML
 	<!-- wp:group {"className":"tp-standard-inner","layout":{"type":"default"}} -->
 	<div class="wp-block-group tp-standard-inner">
 		<!-- wp:heading {"level":1} -->
-		<h1 class="wp-block-heading">Events</h1>
+		<h1 class="wp-block-heading">Calendar</h1>
 		<!-- /wp:heading -->
 		<!-- wp:paragraph -->
 		<p>School events and family updates will be shared here as the calendar is finalized.</p>
@@ -559,7 +583,7 @@ $extended_id      = tp_upsert_page( 'Extended Days Program', 'extended-days-prog
 $schedule_id      = tp_upsert_page( 'Schedule a Tour', 'schedule-a-tour', $schedule_content );
 $director_id      = tp_upsert_page( 'Meet Our Director', 'meet-the-director', $director_content );
 $teachers_id      = tp_upsert_page( 'Meet The Teachers', 'meet-the-teachers', $teachers_content );
-$events_id        = tp_upsert_page( 'Events', 'events', $events_content );
+$events_id        = tp_upsert_page( 'Calendar', 'events', $events_content );
 $contact_id       = tp_upsert_page( 'Contact', 'contact', $contact_content );
 $privacy_id       = tp_upsert_page( 'Privacy Policy', 'privacy-policy', $privacy_content );
 $accessibility_id = tp_upsert_page( 'Accessibility Statement', 'accessibility-statement', $accessibility_content );

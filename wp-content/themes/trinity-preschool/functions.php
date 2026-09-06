@@ -64,6 +64,17 @@ if ( ! function_exists( 'trinity_preschool_enqueue_styles' ) ) {
 				<<<'JS'
 document.addEventListener('DOMContentLoaded', function () {
 	document.querySelectorAll('form.tp-tour-cf7, .tp-tour-cf7 form').forEach(function (form, formIndex) {
+		/*
+		 * Contact Form 7 validates every preceding field when a radio emits a
+		 * change event. Keep choice selections from surfacing unrelated errors;
+		 * the complete form is still validated when it is submitted.
+		 */
+		form.querySelectorAll('.tp-tour-choice-field input[type="radio"]').forEach(function (control) {
+			control.addEventListener('change', function (event) {
+				event.stopPropagation();
+			});
+		});
+
 		var button = form.querySelector('.tp-tour-add-sibling');
 		var siblingFields = form.querySelector('.tp-tour-sibling-fields');
 

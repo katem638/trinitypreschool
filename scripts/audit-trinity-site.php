@@ -38,6 +38,13 @@ $expected_pages = array(
 	'privacy-policy',
 );
 
+$default_page_slugs = array(
+	'parent-portal',
+	'pay-tuition',
+	'accessibility-statement',
+	'privacy-policy',
+);
+
 $errors = array();
 $notes  = array();
 
@@ -62,8 +69,10 @@ foreach ( $expected_pages as $slug ) {
 		}
 	);
 
-	if ( 1 !== $h1_count ) {
-		$errors[] = sprintf( '%s has %d H1 blocks; expected exactly one.', $slug, $h1_count );
+	$uses_default_template = in_array( $slug, $default_page_slugs, true );
+	$expected_h1_count     = $uses_default_template ? 0 : 1;
+	if ( $expected_h1_count !== $h1_count ) {
+		$errors[] = sprintf( '%s has %d in-content H1 blocks; expected %d.', $slug, $h1_count, $expected_h1_count );
 	}
 	if ( $shortcode_count ) {
 		$errors[] = sprintf( '%s still contains %d Shortcode blocks.', $slug, $shortcode_count );
@@ -71,8 +80,12 @@ foreach ( $expected_pages as $slug ) {
 	if ( ! wp_get_post_revisions( $page->ID ) ) {
 		$errors[] = $slug . ' has no revision history.';
 	}
-	if ( 'page-landing' !== get_page_template_slug( $page->ID ) ) {
-		$errors[] = $slug . ' is not assigned to the Designed Page template.';
+	$template_slug = get_page_template_slug( $page->ID );
+	if ( $uses_default_template && '' !== $template_slug ) {
+		$errors[] = $slug . ' is not using the default Page template.';
+	}
+	if ( ! $uses_default_template && 'page-landing' !== $template_slug ) {
+		$errors[] = $slug . ' is not assigned to the Feature Page template.';
 	}
 
 	$slug_template = get_stylesheet_directory() . '/templates/page-' . $slug . '.html';
@@ -89,8 +102,9 @@ foreach ( array( 'page.html', 'page-landing.html', 'front-page.html' ) as $templ
 }
 
 $default_page_template = file_get_contents( get_stylesheet_directory() . '/templates/page.html' );
-if ( ! str_contains( $default_page_template, 'wp:post-title' ) || ! str_contains( $default_page_template, 'tp-page-title-band' ) ) {
-	$errors[] = 'page.html is missing its automatic branded Page title.';
+$page_header_part      = file_get_contents( get_stylesheet_directory() . '/parts/page-header.html' );
+if ( ! str_contains( $default_page_template, '"slug":"page-header"' ) || ! str_contains( $page_header_part, 'wp:post-title' ) || ! str_contains( $page_header_part, 'tp-page-header' ) ) {
+	$errors[] = 'page.html is missing its shared automatic Page header.';
 }
 
 $landing_page_template = file_get_contents( get_stylesheet_directory() . '/templates/page-landing.html' );
@@ -133,6 +147,12 @@ if ( '2026-08-30-v1' !== get_option( 'trinity_theme_hardening_migration' ) ) {
 if ( '2026-09-06-v1' !== get_option( 'trinity_visual_polish_migration' ) ) {
 	$errors[] = 'The expected visual-polish migration version is not recorded.';
 }
+if ( '2026-09-06-v1' !== get_option( 'trinity_page_header_system_migration' ) ) {
+	$errors[] = 'The expected page-header migration version is not recorded.';
+}
+if ( '2026-09-06-v2' !== get_option( 'trinity_pickup_header_migration' ) ) {
+	$errors[] = 'The expected Drop-off & Pick-up header migration version is not recorded.';
+}
 if ( ! post_type_exists( 'tp_event' ) || ! taxonomy_exists( 'tp_event_type' ) ) {
 	$errors[] = 'The portable Event post type or Event Type taxonomy is unavailable.';
 }
@@ -174,7 +194,7 @@ foreach ( array( 'mailto:trinityepiscopalpreschool.org', 'https://www.instagram.
 if ( 3 !== substr_count( $footer, '<!-- wp:column {' ) ) {
 	$errors[] = 'The Footer is not using the intended three-column structure.';
 }
-if ( ! str_contains( $footer, 'Request a Tour' ) || ! str_contains( $footer, 'Email the Preschool' ) ) {
+if ( ! str_contains( $footer, 'Request a Tour' ) || ! str_contains( $footer, '>candonie@trinitymoorestown.org</a>' ) ) {
 	$errors[] = 'The Footer is missing its readable contact or tour CTA text.';
 }
 
@@ -196,7 +216,7 @@ foreach ( array( 'home', 'parent-corner' ) as $payment_page_slug ) {
 }
 
 $hardening_css = file_get_contents( get_stylesheet_directory() . '/assets/css/theme-hardening.css' );
-foreach ( array( '.tp-pattern-hero', '.tp-program-page', '.tp-resource-page', '.tp-contact-cta' ) as $starter_selector ) {
+foreach ( array( '.tp-page-header', '.tp-pattern-hero', '.tp-program-page', '.tp-resource-page', '.tp-contact-cta' ) as $starter_selector ) {
 	if ( ! str_contains( $hardening_css, $starter_selector ) ) {
 		$errors[] = 'Starter-pattern stylesheet is missing ' . $starter_selector . '.';
 	}

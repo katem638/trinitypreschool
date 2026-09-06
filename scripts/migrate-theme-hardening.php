@@ -111,7 +111,7 @@ $navigation_content = <<<'BLOCKS'
 	<!-- wp:navigation-link {"label":"Meet Our Director","url":"/meet-the-director/","kind":"custom"} /-->
 	<!-- wp:navigation-link {"label":"Meet The Teachers","url":"/meet-the-teachers/","kind":"custom"} /-->
 <!-- /wp:navigation-submenu -->
-<!-- wp:navigation-link {"label":"Events","url":"/events/","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Calendar","url":"/events/","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"Contact","url":"/contact/","kind":"custom","isTopLevelLink":true} /-->
 BLOCKS;
 
