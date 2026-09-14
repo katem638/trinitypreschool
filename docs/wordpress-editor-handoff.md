@@ -10,6 +10,37 @@ Status: local editable-content migration completed on 2026-08-17.
 - **Navigation:** menu links are managed in the named **Primary Navigation** menu under Appearance → Editor → Navigation. The Header references that menu; do not edit the Header file for routine menu changes.
 - **Theme code:** the header/footer shell, colors, Fredoka/Poppins typography, spacing, and component CSS remain developer-owned.
 
+## How the Pages are constructed
+
+The theme templates are intentionally small shells: Header, a main content area,
+the Post Content block, and Footer. Each Page owns its visible sections as native
+WordPress blocks in the database. Group blocks hold layout and design classes;
+Heading, Paragraph, Image, Button, List, Details, and File blocks hold the content
+an administrator changes. Theme patterns are starting copies for adding a new
+designed card or section; editing a pattern file does not overwrite an existing
+Page.
+
+Use one block for one semantic field, not one block for every visual line. A
+multi-line postal address can be one Paragraph. Phone and email are independent
+Paragraph blocks because they have different link targets and may need separate
+editing. Do not use repeated line breaks for spacing; spacing belongs to the
+theme styles.
+
+### Text editing versus design editing
+
+- To change words or a link target, click the text in the canvas or select its
+  named block in List View.
+- To change font size, select the containing Paragraph or Heading block and use
+  **Settings → Block → Typography**. Font size is a block setting; selecting only
+  the inline link opens link controls, not typography controls.
+- Content-only sections deliberately hide structural and design tools while
+  leaving their words, links, and media editable. This protects card layouts from
+  accidental removal. Administrators can use **Modify** for intentional design
+  work; routine editors should not need it.
+- Header and Footer contact fields are separate named blocks under **Appearance →
+  Editor → Design → Patterns → Manage all template parts**. Menu links remain in
+  the Primary Navigation entity.
+
 ## Normal Page workflow
 
 1. Open **Pages** and choose the page.
@@ -31,6 +62,14 @@ Reusable Trinity patterns are available for page heroes, content/family cards, s
 Get Involved, Meet Our Director, and Meet The Teachers received a second editor-curation pass in migration v4. Their named sections and staff cards are ordinary selectable native blocks, the Teachers title divider is a Separator block, and only the outer Director section has a light removal lock. Insert the **Teacher Card** pattern inside the relevant “Teacher cards” group when adding staff, then update its List View name and optional HTML anchor to match the teacher.
 
 ## Event workflow
+
+> Current local exception: the Calendar Page presently contains an editable
+> sample 2026–27 date list, and the Home weekly-event block is absent. The Events
+> content type still exists with older May/June 2026 records. Before launch, choose
+> one source of truth: populate Events and restore the dynamic calendar/weekly
+> blocks (recommended), or formally retire the unused event system and update the
+> release audit. Do not maintain both the sample Page list and Event records as
+> live schedules.
 
 1. Open **Events → Add New Event**.
 2. Add the title, description, excerpt, and featured image.
@@ -66,6 +105,7 @@ Also perform the route/link crawl, responsive visual comparison, form-delivery t
 
 - `scripts/setup-trinity-site.php` now refuses to run after the editable-content migration is recorded.
 - `scripts/migrate-editable-content.php` is a guarded, versioned migration. It refuses an ordinary rerun and only contains explicit upgrade paths for its own earlier local versions. Version v4 completes the Get Involved, Director, and Teachers editor curation without replacing their copy.
+- `scripts/migrate-admin-editability.php` is the guarded 2026-09-14 consistency pass. It separates contact methods, removes spacing-only line breaks, adds meaningful names to remaining layout groups, and repairs the Director portrait alt text while preserving Page copy and revisions.
 - Page and event revisions remain enabled.
 - The pre-migration project archive, database dump, checksums, restore instructions, and 51 responsive baseline screenshots are stored outside the repository in `/Users/katemaugeri/Documents/Projects/trinitypreschool-backups/20260817-170540/`.
 - The pre-hardening checkpoint is commit `143ab94`; its verified full site-files archive, database dump, Git bundle, checksums, and restore instructions are stored in `/Users/katemaugeri/Documents/Projects/trinitypreschool-backups/20260830-215948/`.
@@ -78,4 +118,5 @@ Also perform the route/link crawl, responsive visual comparison, form-delivery t
 - Supply the approved Parent Portal and tuition-payment provider URLs. Until then, those Pages intentionally provide office-contact instructions and do not simulate integrations.
 - Review and approve the drafted Privacy Policy and Accessibility Statement.
 - Confirm Monday–Saturday as the Home week definition, approve the Event Type vocabulary, and review the existing “Summer Fun” multi-day timestamp before changing it.
+- Replace the temporary Calendar Page sample list with confirmed Event records and restore the Home weekly grid, or approve retiring the Events system.
 - Assign named operational owners for annual rates/schedules, forms/files, events, form delivery, and legal/accessibility copy.

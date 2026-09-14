@@ -536,9 +536,16 @@ $contact_content = <<<HTML
 				<!-- wp:paragraph {"className":"tp-contact-details-title"} -->
 				<p class="tp-contact-details-title">Prefer to talk?</p>
 				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"className":"tp-contact-actions"} -->
-				<p class="tp-contact-actions"><a href="tel:+18562351840">856-235-1840</a><a href="mailto:candonie@trinitymoorestown.org">candonie@trinitymoorestown.org</a></p>
-				<!-- /wp:paragraph -->
+				<!-- wp:group {"className":"tp-contact-actions","metadata":{"name":"Contact Methods"},"layout":{"type":"default"}} -->
+				<div class="wp-block-group tp-contact-actions">
+					<!-- wp:paragraph {"metadata":{"name":"Phone"}} -->
+					<p><a href="tel:+18562351840">856-235-1840</a></p>
+					<!-- /wp:paragraph -->
+					<!-- wp:paragraph {"metadata":{"name":"Email"}} -->
+					<p><a href="mailto:candonie@trinitymoorestown.org">candonie@trinitymoorestown.org</a></p>
+					<!-- /wp:paragraph -->
+				</div>
+				<!-- /wp:group -->
 				<!-- wp:paragraph {"className":"tp-contact-address"} -->
 				<p class="tp-contact-address">207 W. Main St.<br>Moorestown, NJ 08057</p>
 				<!-- /wp:paragraph -->

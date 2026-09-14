@@ -1,8 +1,8 @@
-<!-- wp:group {"align":"full","className":"tp-site-footer","layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","className":"tp-site-footer","metadata":{"name":"Site Footer"},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull tp-site-footer">
-	<!-- wp:columns {"align":"wide","className":"tp-footer-grid"} -->
+	<!-- wp:columns {"align":"wide","className":"tp-footer-grid","metadata":{"name":"Footer Columns"}} -->
 	<div class="wp-block-columns alignwide tp-footer-grid">
-		<!-- wp:column {"className":"tp-footer-brand-column"} -->
+		<!-- wp:column {"className":"tp-footer-brand-column","metadata":{"name":"School Address"}} -->
 		<div class="wp-block-column tp-footer-brand-column">
 			<!-- wp:site-logo {"width":254,"shouldSyncIcon":false,"className":"tp-footer-logo"} /-->
 
@@ -12,15 +12,23 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"className":"tp-footer-contact"} -->
+		<!-- wp:column {"className":"tp-footer-contact","metadata":{"name":"Contact Details"}} -->
 		<div class="wp-block-column tp-footer-contact">
 			<!-- wp:heading {"level":2,"className":"tp-footer-heading"} -->
 			<h2 class="wp-block-heading tp-footer-heading">Contact</h2>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph -->
-			<p><a href="tel:+18562351840">856-235-1840</a><br><a href="mailto:candonie@trinitymoorestown.org">candonie@trinitymoorestown.org</a></p>
-			<!-- /wp:paragraph -->
+			<!-- wp:group {"className":"tp-footer-contact-methods","metadata":{"name":"Phone and Email"},"layout":{"type":"default"}} -->
+			<div class="wp-block-group tp-footer-contact-methods">
+				<!-- wp:paragraph {"metadata":{"name":"Phone"}} -->
+				<p><a href="tel:+18562351840">856-235-1840</a></p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:paragraph {"metadata":{"name":"Email"}} -->
+				<p><a href="mailto:candonie@trinitymoorestown.org">candonie@trinitymoorestown.org</a></p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
 
 			<!-- wp:social-links {"iconColor":"ink","iconColorValue":"#2f6fa3","size":"has-small-icon-size","className":"is-style-logos-only tp-facebook-link"} -->
 			<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only tp-facebook-link">
@@ -30,7 +38,7 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"className":"tp-footer-connect"} -->
+		<!-- wp:column {"className":"tp-footer-connect","metadata":{"name":"Plan a Visit"}} -->
 		<div class="wp-block-column tp-footer-connect">
 			<!-- wp:heading {"level":2,"className":"tp-footer-heading"} -->
 			<h2 class="wp-block-heading tp-footer-heading">Plan a Visit</h2>
@@ -48,7 +56,7 @@
 	</div>
 	<!-- /wp:columns -->
 
-	<!-- wp:group {"align":"wide","className":"tp-footer-utility","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+	<!-- wp:group {"align":"wide","className":"tp-footer-utility","metadata":{"name":"Copyright and Legal Links"},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 	<div class="wp-block-group alignwide tp-footer-utility">
 		<!-- wp:paragraph {"className":"tp-footer-copyright"} -->
 		<p class="tp-footer-copyright">© 2026 Trinity Episcopal Preschool</p>

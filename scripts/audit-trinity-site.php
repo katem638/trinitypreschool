@@ -153,6 +153,9 @@ if ( '2026-09-06-v1' !== get_option( 'trinity_page_header_system_migration' ) ) 
 if ( '2026-09-06-v2' !== get_option( 'trinity_pickup_header_migration' ) ) {
 	$errors[] = 'The expected Drop-off & Pick-up header migration version is not recorded.';
 }
+if ( '2026-09-14-v1' !== get_option( 'trinity_admin_editability_migration' ) ) {
+	$errors[] = 'The expected admin-editability migration version is not recorded.';
+}
 if ( ! post_type_exists( 'tp_event' ) || ! taxonomy_exists( 'tp_event_type' ) ) {
 	$errors[] = 'The portable Event post type or Event Type taxonomy is unavailable.';
 }
@@ -164,11 +167,37 @@ $home = get_page_by_path( 'home', OBJECT, 'page' );
 if ( ! $home || ! has_block( 'trinity-preschool/weekly-events', $home ) || ! has_block( 'contact-form-7/contact-form-selector', $home ) ) {
 	$errors[] = 'Home is missing its weekly-events or Contact Form 7 selector block.';
 }
+if ( $home && preg_match( '/<br\s*\/?>(?:\s|&nbsp;)*<br\s*\/?>/i', $home->post_content ) ) {
+	$errors[] = 'Home still uses repeated line breaks for visual spacing.';
+}
 foreach ( array( 'contact', 'schedule-a-tour' ) as $form_page_slug ) {
 	$form_page = get_page_by_path( $form_page_slug, OBJECT, 'page' );
 	if ( ! $form_page || ! has_block( 'contact-form-7/contact-form-selector', $form_page ) ) {
 		$errors[] = $form_page_slug . ' is missing its Contact Form 7 selector block.';
 	}
+}
+
+$contact_page = get_page_by_path( 'contact', OBJECT, 'page' );
+$contact_methods = array();
+if ( $contact_page ) {
+	trinity_audit_walk_blocks(
+		parse_blocks( $contact_page->post_content ),
+		function ( $block ) use ( &$contact_methods ) {
+			$classes = preg_split( '/\s+/', trim( $block['attrs']['className'] ?? '' ) );
+			if ( 'core/group' !== ( $block['blockName'] ?? '' ) || ! in_array( 'tp-contact-actions', $classes, true ) ) {
+				return;
+			}
+			foreach ( $block['innerBlocks'] ?? array() as $method ) {
+				if ( 'core/paragraph' === ( $method['blockName'] ?? '' ) ) {
+					$contact_methods[] = $method['attrs']['metadata']['name'] ?? '';
+				}
+			}
+		}
+	);
+}
+sort( $contact_methods );
+if ( array( 'Email', 'Phone' ) !== $contact_methods ) {
+	$errors[] = 'Contact must expose Phone and Email as separate named Paragraph blocks.';
 }
 
 $navigation = get_page_by_path( 'primary-navigation', OBJECT, 'wp_navigation' );
@@ -186,7 +215,7 @@ if (
 }
 
 $footer = file_get_contents( get_stylesheet_directory() . '/parts/footer.html' );
-foreach ( array( 'mailto:trinityepiscopalpreschool.org', 'https://www.instagram.com/', 'https://www.facebook.com/' ) as $placeholder_link ) {
+foreach ( array( 'mailto:trinityepiscopalpreschool.org', 'url":"https://www.instagram.com/"', 'url":"https://www.facebook.com/"' ) as $placeholder_link ) {
 	if ( str_contains( $footer, $placeholder_link ) ) {
 		$errors[] = 'The Footer still contains a placeholder or malformed link: ' . $placeholder_link;
 	}
@@ -196,6 +225,12 @@ if ( 3 !== substr_count( $footer, '<!-- wp:column {' ) ) {
 }
 if ( ! str_contains( $footer, 'Request a Tour' ) || ! str_contains( $footer, '>candonie@trinitymoorestown.org</a>' ) ) {
 	$errors[] = 'The Footer is missing its readable contact or tour CTA text.';
+}
+if ( ! str_contains( $header, '"name":"Address"' ) || ! str_contains( $header, '"name":"Phone"' ) ) {
+	$errors[] = 'The Header must expose Address and Phone as separate named blocks.';
+}
+if ( ! str_contains( $footer, '"name":"Phone"' ) || ! str_contains( $footer, '"name":"Email"' ) ) {
+	$errors[] = 'The Footer must expose Phone and Email as separate named blocks.';
 }
 
 $extended_page = get_page_by_path( 'extended-days-program', OBJECT, 'page' );

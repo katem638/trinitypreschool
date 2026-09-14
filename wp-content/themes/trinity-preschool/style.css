@@ -1464,6 +1464,10 @@ h3 {
 	margin: 0;
 }
 
+.tp-topbar-contact > p {
+	margin: 0;
+}
+
 .tp-topbar-contact a {
 	color: var(--tp-warm-cream);
 	font-size: 0.7rem;
@@ -1485,13 +1489,13 @@ h3 {
 	width: 0.48rem;
 }
 
-.tp-topbar-contact a:first-child::before {
+.tp-topbar-address a::before {
 	background: var(--tp-gold);
 	border-radius: 999px 999px 999px 0;
 	transform: rotate(-45deg) translateY(-1px);
 }
 
-.tp-topbar-contact a:last-child::before {
+.tp-topbar-phone a::before {
 	border: 2px solid var(--tp-gold);
 	border-radius: 999px;
 	box-sizing: border-box;
@@ -1630,9 +1634,13 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	margin-top: 0;
 }
 
-.tp-footer-contact > p:first-of-type,
+.tp-footer-contact-methods,
 .tp-footer-connect > p:first-of-type {
 	margin-top: 0;
+}
+
+.tp-footer-contact-methods > p {
+	margin: 0 0 0.5rem;
 }
 
 .tp-facebook-link {
@@ -3557,6 +3565,10 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	justify-items: start;
 	line-height: 1.35;
 	margin-top: 22px;
+}
+
+.tp-contact-details .tp-contact-actions > p {
+	margin: 0;
 }
 
 .tp-contact-details .tp-contact-address {
