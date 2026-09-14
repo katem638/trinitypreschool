@@ -371,9 +371,16 @@ $home_content = <<<HTML
 			<!-- wp:paragraph -->
 			<p>Have a question about admissions, tours, or our programs? We would love to help.</p>
 			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"tp-home-contact-actions"} -->
-			<p class="tp-home-contact-actions"><a href="tel:+18562351840">856-235-1840</a><a href="mailto:candonie@trinitymoorestown.org">candonie@trinitymoorestown.org</a></p>
-			<!-- /wp:paragraph -->
+			<!-- wp:group {"metadata":{"name":"Contact Methods"},"className":"tp-home-contact-actions","layout":{"type":"default"}} -->
+			<div class="wp-block-group tp-home-contact-actions">
+				<!-- wp:paragraph {"metadata":{"name":"Phone"}} -->
+				<p><a href="tel:+18562351840">856-235-1840</a></p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"metadata":{"name":"Email"}} -->
+				<p><a href="mailto:candonie@trinitymoorestown.org">candonie@trinitymoorestown.org</a></p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
 		</div>
 		<!-- /wp:group -->
 		<!-- wp:group {"className":"tp-contact-copy","layout":{"type":"constrained"}} -->

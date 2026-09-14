@@ -11,9 +11,9 @@
 <article class="wp-block-group tp-teacher-card">
 	<!-- wp:group {"className":"tp-teacher-profile","metadata":{"name":"Portrait and introduction"},"layout":{"type":"default"}} -->
 	<div class="wp-block-group tp-teacher-profile">
-		<!-- wp:paragraph {"className":"tp-teacher-placeholder","metadata":{"name":"Headshot placeholder"}} -->
-		<p class="tp-teacher-placeholder">TN</p>
-		<!-- /wp:paragraph -->
+		<!-- wp:image {"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Teacher portrait - replace placeholder"}} -->
+		<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/teacher-photo-placeholder.png' ) ); ?>" alt="Teacher photo coming soon"/></figure>
+		<!-- /wp:image -->
 		<!-- wp:group {"className":"tp-teacher-card-body","metadata":{"name":"Profile content"},"layout":{"type":"default"}} -->
 		<div class="wp-block-group tp-teacher-card-body">
 		<!-- wp:paragraph {"className":"tp-teacher-role","metadata":{"name":"Role"}} -->

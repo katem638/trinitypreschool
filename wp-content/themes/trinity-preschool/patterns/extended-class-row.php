@@ -10,7 +10,7 @@
 <!-- wp:group {"tagName":"article","className":"tp-extended-row tp-row-yoga","metadata":{"name":"Extended day class row"},"templateLock":"contentOnly","layout":{"type":"default"}} -->
 <article class="wp-block-group tp-extended-row tp-row-yoga">
 	<!-- wp:group {"tagName":"header","layout":{"type":"default"}} -->
-	<header class="wp-block-group"><!-- wp:group {"className":"tp-row-title","layout":{"type":"default"}} --><div class="wp-block-group tp-row-title"><!-- wp:html --><span aria-hidden="true">A</span><!-- /wp:html --><!-- wp:heading --><h2 class="wp-block-heading">Class name</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Short class descriptor</p><!-- /wp:paragraph --></div><!-- /wp:group --></header>
+	<header class="wp-block-group"><!-- wp:group {"className":"tp-row-title","layout":{"type":"default"}} --><div class="wp-block-group tp-row-title"><!-- wp:heading --><h2 class="wp-block-heading">Class name</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Short class descriptor</p><!-- /wp:paragraph --></div><!-- /wp:group --></header>
 	<!-- /wp:group -->
 	<!-- wp:group {"className":"tp-row-body","layout":{"type":"default"}} -->
 	<div class="wp-block-group tp-row-body">

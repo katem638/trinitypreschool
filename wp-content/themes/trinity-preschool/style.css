@@ -912,6 +912,10 @@ Text Domain: trinity-preschool
 	--row-color: #4279d3;
 }
 
+.tp-row-readers {
+	--row-color: #8c5cad;
+}
+
 .tp-row-karate {
 	--row-color: var(--tp-navy);
 }
@@ -932,24 +936,9 @@ Text Domain: trinity-preschool
 .tp-row-title {
 	align-items: center;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 13px;
 	min-width: 0;
-}
-
-.tp-row-title > span {
-	align-self: center;
-	align-items: center;
-	background: rgba(255, 255, 255, 0.26);
-	border-radius: 8px;
-	display: inline-flex;
-	flex: 0 0 auto;
-	font-family: var(--tp-display-font);
-	font-size: 1.1rem;
-	font-weight: 800;
-	height: 36px;
-	justify-content: center;
-	line-height: 1;
-	width: 36px;
 }
 
 .tp-row-title h2 {
@@ -1300,15 +1289,6 @@ Text Domain: trinity-preschool
 
 	.tp-row-title p {
 		margin-top: 5px;
-	}
-
-	.tp-row-title {
-		display: grid;
-		grid-template-columns: 36px minmax(0, 1fr);
-	}
-
-	.tp-row-title p {
-		grid-column: 2;
 	}
 
 	.tp-row-body dl {
@@ -2570,6 +2550,13 @@ body.home .tp-primary-nav .wp-block-navigation__container > .wp-block-navigation
 	display: grid;
 	gap: 10px;
 	justify-items: start;
+	margin: 28px 0 0;
+}
+
+.tp-home-contact-actions > p {
+	color: var(--tp-white);
+	line-height: 1.4;
+	margin: 0;
 }
 
 .tp-home-contact-actions a {

@@ -150,6 +150,8 @@
 			]
 		},
 		"typography": {
+			"customFontSize": true,
+			"defaultFontSizes": false,
 			"fluid": true,
 			"fontFamilies": [
 				{
